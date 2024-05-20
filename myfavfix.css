@@ -241,7 +241,10 @@ n-content{
     gap: 1.5rem;
     margin-top: 4rem;
 }
-
+.row {
+    flex: 0 1 300px; /* 設置固定寬度 */
+    margin-bottom: 15px;
+}
 .row-img{
     overflow: hidden; 
     margin-bottom: 20px;
@@ -256,10 +259,10 @@ n-content{
     padding: 30px 5% 30px;
 }
 
-.n-content{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, auto));
-    align-items: center;
+.n-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start; /* 控制對齊方式 */
     gap: 1.5rem;
     margin-top: 1.5rem;
 }
