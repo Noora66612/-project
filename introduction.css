@@ -13,6 +13,7 @@
     text-decoration: none;
     scroll-behavior: smooth;
     font-family: '思源宋體';
+
 }
   
 :root{
@@ -28,7 +29,6 @@
     --h2-font: 3.5rem;
     --p-font: 1rem;
 }
-
 body{
     background-color: var(--bg-color);
     color: var(--text-color);
@@ -152,6 +152,7 @@ header{
 }
 
 .sidebar {
+    z-index: 999;
     height: 100%;
     width: 20%;
     min-width: 120px;
@@ -195,120 +196,14 @@ header{
     right: 0;
 }
 
-.n-restaurants{
-    padding: 120px 7% 80px;
-}
-
-.center-text{
-    text-align: center;
-}
-
-.n-content{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, auto));
-    align-items: center;
-    gap: 1.5rem;
-    margin-top: 4rem;
-}
-
-.row-content{
-    display: grid;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 10px;
-    width: 300px;
-    margin: 0 auto;
-}
-.row-img {
-    overflow: hidden; 
-    margin-bottom: 15px;
-    width: 300px; /* 固定寬度 */
-    margin: 0 auto;
-}
-
-.row-img img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* 保持比例並裁剪 */
-    display: block;
-    cursor: pointer;
-    border-radius: 10%;
-}
-
-.row a{
-    margin-top: 5px;
-    font-size: 17px;
-    font-weight: 700;
-    margin-bottom: 5px;
-    color: var(--text-color);
-    text-decoration: none;
-    transition: all 0.6s;
-}
-.row a:hover{
-    transform: scale(1.03);
-    color: #524d4d;
-}
-.opening-hour{
-    display: flex;
-    color: #524d4d;
-    height: 50px;
-}
-.row-in{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-top: 5px;
-    width: 300px;
-    margin: 0 auto;
-}
-.phonenum{
-    color: #524d4d;
-}
-
-.row-right a{
-    font-size: 20px;
-    font-weight: 400;
-    color: #524d4d;
-}
-
-.n-btn{
-    text-align: center;
-    margin-top: 2rem;
-    width: 100%;
-}
-.btn{
-    display: inline-block;
-    padding: 14px 42px;
-    background: transparent;
-    color: var(--text-color);
-    font-size: 15px;
-    font-weight: 500px;
-    border: 1px solid #524d4d;
-    border-radius: 30px;
-    transition: all 0.6s;
-    margin: 0 auto;
-    margin-bottom: 30px;
-}
-.btn:hover{
-    background: var(--text-color);
-    border: 1px solid var(--text-color);
-    color: var(--bg-color);
-    transform: scale(0.9) translateY(-6px);
-}
 
 @media(max-width: 1610px){
     header{
         padding: 15px 7%;
     }
-    section{
-        padding: 100px 7% 80px;
-    }
 }
 
 @media(max-width: 1500px){
-    section{
-        padding: 100px 4% 70px;
-    }
     :root{
         --h1-font: 4.8rem;
         --h2-font: 2.8rem;
@@ -316,7 +211,13 @@ header{
     }
 }
 
-@media(max-width: 1440px){
+@media(max-width: 1170px){
+    header{
+        padding: 10px 4%;
+    }
+}
+
+@media(max-width: 1050px){
     .navlist{
     position: absolute;
     width: 100%;
@@ -345,28 +246,15 @@ header{
     .logo{
         font-size: 25px;
     }
-    .search-input.active {
-        width: 250px; /* 需要的长度 */
-        opacity: 1;
-    }
 }
 
-@media(max-width: 1170px){
-    header{
-        padding: 10px 4%;
+@media(max-width: 530px){
+    :root{
+        --h1-font: 3.5rem;
+        --h2-font: 2.2rem;
     }
-    section{
-        padding: 80px 4% 70px;
-    }
-}
-
-@media(max-width: 650px){
-    header{
-        padding: 10px 4%;
-    }
-    .search-input.active {
-        width: 150px; /* 需要的长度 */
-        opacity: 1;
+    .nav-right a{
+        font-size: 7px;
     }
 }
 
@@ -376,9 +264,188 @@ header{
     outline: none;
     font-size: 20px;
     font-weight: 400;
-    color: #524d4d;
+    color: var(--second-color);
 }
 
 .btn1 :hover{
     cursor: pointer;
+}
+
+
+
+
+/* introduction */
+.container {
+    width: 85%;
+    max-width: 2000px;
+    margin: 150px auto 20px auto;
+    border: 1px solid #ccc;
+    padding: 30px;
+    background-color: rgb(188, 170, 161);
+    border-radius: 30px;
+    display: flex; /* 使用 Flexbox 佈局 */
+    align-items: center; /* 垂直方向居中 */
+    opacity: 0.8; 
+}
+
+.store-photo {
+    width: 100px;
+    height: 100px;
+    float: left;
+    margin-right: 80px; /* 調整 margin */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.store-photo img {
+    width: 150%;
+    height: 150%;
+    object-fit: cover; /* 保持圖片比例並裁剪 */
+    border-radius: 10%; /* 使照片變為圓形 */
+    margin-left: 50px;
+}
+
+.store-details {
+    display: flex;
+    flex-direction: column;
+}
+.store-details h2 {
+    margin: 0 0 10px 0;
+}
+
+.detail-item {
+    text-decoration: none;
+    color: var(--text-color);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.detail-item i{
+    margin-right: 8px;
+}
+
+.icon {
+    margin-right: 10px;
+}
+
+.detail-text {
+    text-align: left;
+}
+
+.comment-box {
+    width: 89%;
+    height: 4px;
+    background-color: rgb(93, 54, 28); 
+    margin: 10px auto; /* 與方塊間的間隔 */
+    opacity: 0.5; 
+}
+
+.review-container {
+    width: 85%;
+    height: auto;
+    margin: 20px auto; /* 與上方的橫條間距 */
+    border: 1px solid #ccc;
+    padding: 40px;
+    background-color: rgb(215, 198, 177);
+    border-radius: 30px;
+    position: relative; /* 增加相對定位 */
+}
+
+.review-wrapper {
+    position: relative; 
+}
+
+.review-container textarea {
+    width: 100%;
+    border: none;
+    padding: 1px;
+    font-size: 16px;
+    resize: none; /* 禁用手動調整大小 */
+    background: transparent;
+    box-sizing: border-box; /* 確保寬度包括內填充 */
+}
+
+.review-container textarea:focus {
+    outline: none; /* 去掉點擊時的外框 */
+}
+
+.placeholder {
+    font-size: 16px;
+    padding: 10px;
+    color: rgb(85, 45, 31);
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none; /* 使其不可點擊 */    
+}
+
+textarea::placeholder {
+    color: rgb(85, 45, 31);
+    font-size: 16px;
+}
+textarea:focus {
+    outline: none; /* 去掉点击时的外框 */
+}
+.buttons {
+    display: flex;
+    justify-content: flex-end; /* 將按鈕移到右下角 */
+    margin-top: 10px;
+}
+
+.button {
+    padding: 8px 16px;
+    margin-left: 10px;
+    background-color: rgb(137, 101, 88);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.button:hover {
+    background-color: rgb(60, 30, 20);
+}
+
+.comments-container {
+    background-color: white;
+    width: 85%;
+    margin: 50px auto;
+    padding: 40px;
+    border-radius: 30px;
+    border: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.comments-header {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+.comments-header .title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.comment {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.comment .text {
+    flex: 1;
+}
+
+.comment .year {
+    margin-left: 20px;
+    color: rgb(85, 45, 31);
 }

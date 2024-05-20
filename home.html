@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" 
+    crossorigin="anonymous"></script>
+    <title>央央熊食在</title>
+    <link rel="stylesheet" type="text/css" href="home.css">
+
+    <!-- box-icon link -->
+    <link rel="stylesheet" 
+     href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
+    <!-- remix-icons link -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+    rel="stylesheet"/>
+    
+    <!-- google fonts link -->
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    
+
+</head>
+<body>
+ 
+    <!--- header --->
+    <header>
+        <a href="#" class="logo">央央熊食在</a>
+        <ul class="navlist">
+            <li class="nav-item">
+                <a href=home.html class="nav-link">首頁</a>
+            </li>
+            <li class="nav-item">
+                <a href=all.html class="nav-link">所有餐廳</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  用餐地點
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a href=school.html class="dropdown-item">學餐</a></li>
+                  <li><a href=backdoor.html class="dropdown-item">後門</a></li>
+                  <li><a href=street.html class="dropdown-item">宵夜街</a></li>
+                </ul>
+            </li>
+        </ul> 
+
+        <div class="nav-right d-flex align-items-center">
+            <form class="d-flex align-items-center search-form" style="margin-right: 15px;">
+                <form class="d-flex align-items-center search-form" style="margin-right: 15px;">
+                    <input class="form-control me-2 search-input" type="search" placeholder="Search" aria-label="Search">
+                    <button class="search-btn" type="button">
+                        <i class="ri-search-line"></i>
+                    </button>
+                </form> 
+            </form>            
+            <a href="myfavfix.html"><i class="ri-heart-line"></i></a>
+            <a href="user.html"><i class="ri-user-line"></i></a>
+            <div class="bx bx-menu" id="menu-icon"></div>
+        </div>  
+    </header>
+
+    <!--- sidebar --->
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="close-btn" id="close-btn">&times;</a>
+        <a href="home.html">首頁</a>
+        <a href=all.html>所有餐廳</a>
+        <a href=school.html>學餐</a>
+        <a href="backdoor.html">後門</a>
+        <a href="street.html">宵夜街</a>
+        <a href="#">聯絡我們</a>
+    </div>
+
+    <!--- 每日推薦 --->
+    <section class="recs">
+        <div class="center-text">
+            <h3>每日推薦</h3>
+        </div> 
+        <div class="n-content">
+            <div class="row">
+                <div class="row-img">
+                    <a href=introduction.html><img src="img/n1.jpg" alt="熊讚啦啦"></a>
+                </div>
+                <div class="row-content">
+                <a href=introduction.html>熊讚啦啦</a>
+                <div class="opening-hour"> 
+                    <i class="ri-time-line"></i>
+                    營業時間：
+                    不固定，請查詢臉書
+                </div>
+                </div>
+
+                <div class="row-in">
+                    <div class="row-left">
+                        <div class="phonenum">
+                            <i class="ri-phone-line"></i>
+                                電話：
+                        </div>
+                    </div>
+                    <div class="row-right">
+                        <Button onclick="Toggle()" id="btnn1" class="btn1"><i class="ri-heart-fill"></i></Button>
+                    </div>            
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="row-img">
+                    <a href=introduction.html><img src="img/n2.jpeg" alt="No.17 White House"></a>
+                </div>
+                <div class="row-content">
+                <a href="#">No.17 White House</a>
+                <div class="opening-hour"> 
+                    <i class="ri-time-line"></i>
+                    營業時間：
+                    11:20 AM - 2PM, 5 - 7:30 PM
+                </div>
+                </div>
+
+                <div class="row-in">
+                    <div class="row-left">
+                        <div class="phonenum">
+                            <i class="ri-phone-line"></i>
+                                電話：
+                        </div>
+                    </div>
+                    <div class="row-right">
+                        <Button onclick="Toggle()" id="btnn1" class="btn1"><i class="ri-heart-fill"></i></Button>
+                    </div>   
+                </div>          
+            </div>
+
+            <div class="row">
+                <div class="row-img">
+                    <a href=introduction.html><img src="img/n3.jpg" alt="八方雲集"></a>
+                </div>
+                <div class="row-content">
+                <a href="#">八方雲集</a>
+                <div class="opening-hour"> 
+                    <i class="ri-time-line"></i>
+                    營業時間：
+                    11AM - 8PM
+                </div>
+                </div>
+                
+                <div class="row-in">
+                    <div class="row-left">
+                        <div class="phonenum">
+                            <i class="ri-phone-line"></i>
+                                電話：
+                        </div>
+                    </div>
+                    <div class="row-right">
+                        <Button onclick="Toggle()" id="btnn1" class="btn1"><i class="ri-heart-fill"></i></Button>
+                    </div>            
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!--- 所有餐廳 --->
+    <section class="n-restaurants">
+        <div class="center-text">
+            <h3>所有餐廳</h3>
+        </div> 
+
+        <div class="n-content">
+            <div class="row">
+                <div class="row-img">
+                    <a href=introduction.html><img src="img/n1.jpg" alt="熊讚啦啦"></a>
+                </div>
+                <div class="row-content">
+                <a href="#">熊讚啦啦</a>
+                <div class="opening-hour"> 
+                    <i class="ri-time-line"></i>
+                    營業時間：
+                    不固定，請查詢臉書
+                </div>
+                </div>
+
+                <div class="row-in">
+                    <div class="row-left">
+                        <div class="phonenum">
+                            <i class="ri-phone-line"></i>
+                                電話：
+                        </div>
+                    </div>
+                    <div class="row-right">
+                        <Button onclick="Toggle()" id="btnn1" class="btn1"><i class="ri-heart-fill"></i></Button>
+                    </div>            
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="row-img">
+                    <a href=introduction.html><img src="img/n2.jpeg" alt="No.17 White House"></a>
+                </div>
+                <div class="row-content">
+                    <a href="#">No.17 White House</a>
+                    <div class="opening-hour"> 
+                        <i class="ri-time-line"></i>
+                        營業時間：
+                        11:20 AM - 2PM, 5 - 7:30 PM
+                    </div>
+                </div>
+
+                <div class="row-in">
+                    <div class="row-left">
+                        <div class="phonenum">
+                            <i class="ri-phone-line"></i>
+                                電話：
+                        </div>
+                    </div>
+                    <div class="row-right">
+                        <Button onclick="Toggle()" id="btnn1" class="btn1"><i class="ri-heart-fill"></i></Button>
+                    </div>  
+                </div>          
+            </div>
+
+            <div class="row">
+                <div class="row-img">
+                    <a href=introduction.html><img src="img/n3.jpg" alt="八方雲集"></a>
+                </div>
+                <div class="row-content">
+                <a href="#">八方雲集</a>
+                <div class="opening-hour"> 
+                    <i class="ri-time-line"></i>
+                    營業時間：
+                    11AM - 8PM
+                </div>
+                </div>
+
+                <div class="row-in">
+                    <div class="row-left">
+                        <div class="phonenum">
+                            <i class="ri-phone-line"></i>
+                                電話：
+                        </div>
+                    </div>
+                    <div class="row-right">
+                        <Button onclick="Toggle()" id="btnn1" class="btn1"><i class="ri-heart-fill"></i></Button>
+                    </div>            
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="row-img">
+                    <a href=introduction.html><img src="img/n4.jpg" alt="飽咖咖"></a>
+                </div>
+                <div class="row-content">
+                <a href="#">飽咖咖</a>
+                <div class="opening-hour"> 
+                    <i class="ri-time-line"></i>
+                    營業時間：
+                    11:30 AM - 2PM, 5 - 8 PM
+                </div>
+                </div>
+
+                <div class="row-in">
+                    <div class="row-left">
+                        <div class="phonenum">
+                            <i class="ri-phone-line"></i>
+                                電話：
+                        </div>
+                    </div>
+                    <div class="row-right">
+                        <Button onclick="Toggle(this)" class="btn1"><i class="ri-heart-fill"></i></Button>
+                    </div>            
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="row-img">
+                    <a href=introduction.html><img src="img/n5.jpg" alt="咖哩老師"></a>
+                </div>
+                <div class="row-content">
+                <a href="#">咖哩老師</a>
+                <div class="opening-hour"> 
+                    <i class="ri-time-line"></i>
+                    營業時間：
+                    
+                </div>
+                </div>
+
+                <div class="row-in">
+                    <div class="row-left">
+                        <div class="phonenum">
+                            <i class="ri-phone-line"></i>
+                                電話：
+                        </div>
+                    </div>
+                    <div class="row-right">
+                        <Button onclick="Toggle(this)" class="btn1"><i class="ri-heart-fill"></i></Button>
+                    </div>            
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="row-img">
+                    <a href=introduction.html><img src="img/n6.jpeg" alt="鼎記食堂"></a>
+                </div>
+                <div class="row-content">
+                <a href="#">鼎記食堂</a>
+                <div class="opening-hour"> 
+                    <i class="ri-time-line"></i>
+                    營業時間：
+                    
+                </div>
+                </div>
+
+                <div class="row-in">
+                    <div class="row-left">
+                        <div class="phonenum">
+                            <i class="ri-phone-line"></i>
+                                電話：
+                        </div>
+                    </div>
+                    <div class="row-right">
+                        <Button onclick="Toggle(this)" class="btn1"><i class="ri-heart-fill"></i></Button>
+                    </div>            
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="row-img">
+                    <a href=introduction.html><img src="img/n7.jpeg" alt="Burger King"></a>
+                </div>
+                <div class="row-content">
+                <a href="#">Burger King</a>
+                <div class="opening-hour"> 
+                    <i class="ri-time-line"></i>
+                    營業時間：
+                    
+                </div>
+                </div>
+
+                <div class="row-in">
+                    <div class="row-left">
+                        <div class="phonenum">
+                            <i class="ri-phone-line"></i>
+                                電話：
+                        </div>
+                    </div>
+                    <div class="row-right">
+                        <Button onclick="Toggle(this)" class="btn1"><i class="ri-heart-fill"></i></Button>
+                    </div>            
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="row-img">
+                    <a href=introduction.html><img src="img/n8.jpeg" alt="一品鍋"></a>
+                </div>
+                <div class="row-content">
+                <a href="#">一品鍋</a>
+                <div class="opening-hour"> 
+                    <i class="ri-time-line"></i>
+                    營業時間：
+                    
+                </div>
+                </div>
+
+                <div class="row-in">
+                    <div class="row-left">
+                        <div class="phonenum">
+                            <i class="ri-phone-line"></i>
+                                電話：
+                        </div>
+                    </div>
+                    <div class="row-right">
+                        <Button onclick="Toggle(this)" class="btn1"><i class="ri-heart-fill"></i></Button>
+                    </div>            
+                </div>
+            </div>
+
+    </section>
+    <div class="n-btn">
+        <a href=all.html class="btn">查看所有</a>
+    </div>
+
+    <!--- 後門餐廳 --->
+    <section class="n-restaurants">
+        <div class="center-text">
+            <h3>後門餐廳</h3>
+        </div> 
+
+        <div class="n-content">
+            <div class="row">
+                <div class="row-img">
+                    <a href=introduction.html><img src="img/n1.jpg" alt="熊讚啦啦"></a>
+                </div>
+                <div class="row-content">
+                <a href="#">熊讚啦啦</a>
+                <div class="opening-hour"> 
+                    <i class="ri-time-line"></i>
+                    營業時間：
+                    不固定，請查詢臉書
+                </div>
+                </div>
+
+                <div class="row-in">
+                    <div class="row-left">
+                        <div class="phonenum">
+                            <i class="ri-phone-line"></i>
+                                電話：
+                        </div>
+                    </div>
+                    <div class="row-right">
+                        <Button onclick="Toggle()" id="btnn1" class="btn1"><i class="ri-heart-fill"></i></Button>
+                    </div>            
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="row-img">
+                    <a href=introduction.html><img src="img/n2.jpeg" alt="No.17 White House"></a>
+                </div>
+                <div class="row-content">
+                    <a href="#">No.17 White House</a>
+                    <div class="opening-hour"> 
+                        <i class="ri-time-line"></i>
+                        營業時間：
+                        11:20 AM - 2PM, 5 - 7:30 PM
+                    </div>
+                </div>
+
+                <div class="row-in">
+                    <div class="row-left">
+                        <div class="phonenum">
+                            <i class="ri-phone-line"></i>
+                                電話：
+                        </div>
+                    </div>
+                    <div class="row-right">
+                        <Button onclick="Toggle()" id="btnn1" class="btn1"><i class="ri-heart-fill"></i></Button>
+                    </div>  
+                </div>          
+            </div>
+
+            <div class="row">
+                <div class="row-img">
+                    <a href=introduction.html><img src="img/n3.jpg" alt="八方雲集"></a>
+                </div>
+                <div class="row-content">
+                <a href="#">八方雲集</a>
+                <div class="opening-hour"> 
+                    <i class="ri-time-line"></i>
+                    營業時間：
+                    11AM - 8PM
+                </div>
+                </div>
+
+                <div class="row-in">
+                    <div class="row-left">
+                        <div class="phonenum">
+                            <i class="ri-phone-line"></i>
+                                電話：
+                        </div>
+                    </div>
+                    <div class="row-right">
+                        <Button onclick="Toggle()" id="btnn1" class="btn1"><i class="ri-heart-fill"></i></Button>
+                    </div>            
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="row-img">
+                    <a href=introduction.html><img src="img/n4.jpg" alt="飽咖咖"></a>
+                </div>
+                <div class="row-content">
+                <a href="#">飽咖咖</a>
+                <div class="opening-hour"> 
+                    <i class="ri-time-line"></i>
+                    營業時間：
+                    11:30 AM - 2PM, 5 - 8 PM
+                </div>
+                </div>
+
+                <div class="row-in">
+                    <div class="row-left">
+                        <div class="phonenum">
+                            <i class="ri-phone-line"></i>
+                                電話：
+                        </div>
+                    </div>
+                    <div class="row-right">
+                        <Button onclick="Toggle(this)" class="btn1"><i class="ri-heart-fill"></i></Button>
+                    </div>            
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="row-img">
+                    <a href=introduction.html><img src="img/n5.jpg" alt="咖哩老師"></a>
+                </div>
+                <div class="row-content">
+                <a href="#">咖哩老師</a>
+                <div class="opening-hour"> 
+                    <i class="ri-time-line"></i>
+                    營業時間：
+                    
+                </div>
+                </div>
+
+                <div class="row-in">
+                    <div class="row-left">
+                        <div class="phonenum">
+                            <i class="ri-phone-line"></i>
+                                電話：
+                        </div>
+                    </div>
+                    <div class="row-right">
+                        <Button onclick="Toggle(this)" class="btn1"><i class="ri-heart-fill"></i></Button>
+                    </div>            
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="row-img">
+                    <a href=introduction.html><img src="img/n6.jpeg" alt="鼎記食堂"></a>
+                </div>
+                <div class="row-content">
+                <a href="#">鼎記食堂</a>
+                <div class="opening-hour"> 
+                    <i class="ri-time-line"></i>
+                    營業時間：
+                    
+                </div>
+                </div>
+
+                <div class="row-in">
+                    <div class="row-left">
+                        <div class="phonenum">
+                            <i class="ri-phone-line"></i>
+                                電話：
+                        </div>
+                    </div>
+                    <div class="row-right">
+                        <Button onclick="Toggle(this)" class="btn1"><i class="ri-heart-fill"></i></Button>
+                    </div>            
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="row-img">
+                    <a href=introduction.html><img src="img/n7.jpeg" alt="Burger King"></a>
+                </div>
+                <div class="row-content">
+                <a href="#">Burger King</a>
+                <div class="opening-hour"> 
+                    <i class="ri-time-line"></i>
+                    營業時間：
+                    
+                </div>
+                </div>
+
+                <div class="row-in">
+                    <div class="row-left">
+                        <div class="phonenum">
+                            <i class="ri-phone-line"></i>
+                                電話：
+                        </div>
+                    </div>
+                    <div class="row-right">
+                        <Button onclick="Toggle(this)" class="btn1"><i class="ri-heart-fill"></i></Button>
+                    </div>            
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="row-img">
+                    <a href=introduction.html><img src="img/n8.jpeg" alt="一品鍋"></a>
+                </div>
+                <div class="row-content">
+                <a href="#">一品鍋</a>
+                <div class="opening-hour"> 
+                    <i class="ri-time-line"></i>
+                    營業時間：
+                    
+                </div>
+                </div>
+
+                <div class="row-in">
+                    <div class="row-left">
+                        <div class="phonenum">
+                            <i class="ri-phone-line"></i>
+                                電話：
+                        </div>
+                    </div>
+                    <div class="row-right">
+                        <Button onclick="Toggle(this)" class="btn1"><i class="ri-heart-fill"></i></Button>
+                    </div>            
+                </div>
+            </div>
+
+    </section>
+    <div class="n-btn">
+        <a href=backdoor.html class="btn">查看所有</a>
+    </div>
+
+    <!--- 宵夜街餐廳 --->
+<section class="n-restaurants">
+    <div class="center-text">
+        <h3>宵夜街餐廳</h3>
+    </div> 
+
+    <div class="n-content">
+        <div class="row">
+            <div class="row-img">
+                <a href=introduction.html><img src="img/n1.jpg" alt="熊讚啦啦"></a>
+            </div>
+            <div class="row-content">
+            <a href="#">熊讚啦啦</a>
+            <div class="opening-hour"> 
+                <i class="ri-time-line"></i>
+                營業時間：
+                不固定，請查詢臉書
+            </div>
+            </div>
+
+            <div class="row-in">
+                <div class="row-left">
+                    <div class="phonenum">
+                        <i class="ri-phone-line"></i>
+                            電話：
+                    </div>
+                </div>
+                <div class="row-right">
+                    <Button onclick="Toggle()" id="btnn1" class="btn1"><i class="ri-heart-fill"></i></Button>
+                </div>            
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="row-img">
+                <a href=introduction.html><img src="img/n2.jpeg" alt="No.17 White House"></a>
+            </div>
+            <div class="row-content">
+                <a href="#">No.17 White House</a>
+                <div class="opening-hour"> 
+                    <i class="ri-time-line"></i>
+                    營業時間：
+                    11:20 AM - 2PM, 5 - 7:30 PM
+                </div>
+            </div>
+
+            <div class="row-in">
+                <div class="row-left">
+                    <div class="phonenum">
+                        <i class="ri-phone-line"></i>
+                            電話：
+                    </div>
+                </div>
+                <div class="row-right">
+                    <Button onclick="Toggle()" id="btnn1" class="btn1"><i class="ri-heart-fill"></i></Button>
+                </div>  
+            </div>          
+        </div>
+
+        <div class="row">
+            <div class="row-img">
+                <a href=introduction.html><img src="img/n3.jpg" alt="八方雲集"></a>
+            </div>
+            <div class="row-content">
+            <a href="#">八方雲集</a>
+            <div class="opening-hour"> 
+                <i class="ri-time-line"></i>
+                營業時間：
+                11AM - 8PM
+            </div>
+            </div>
+
+            <div class="row-in">
+                <div class="row-left">
+                    <div class="phonenum">
+                        <i class="ri-phone-line"></i>
+                            電話：
+                    </div>
+                </div>
+                <div class="row-right">
+                    <Button onclick="Toggle()" id="btnn1" class="btn1"><i class="ri-heart-fill"></i></Button>
+                </div>            
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="row-img">
+                <a href=introduction.html><img src="img/n4.jpg" alt="飽咖咖"></a>
+            </div>
+            <div class="row-content">
+            <a href="#">飽咖咖</a>
+            <div class="opening-hour"> 
+                <i class="ri-time-line"></i>
+                營業時間：
+                11:30 AM - 2PM, 5 - 8 PM
+            </div>
+            </div>
+
+            <div class="row-in">
+                <div class="row-left">
+                    <div class="phonenum">
+                        <i class="ri-phone-line"></i>
+                            電話：
+                    </div>
+                </div>
+                <div class="row-right">
+                    <Button onclick="Toggle(this)" class="btn1"><i class="ri-heart-fill"></i></Button>
+                </div>            
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="row-img">
+                <a href=introduction.html><img src="img/n5.jpg" alt="咖哩老師"></a>
+            </div>
+            <div class="row-content">
+            <a href="#">咖哩老師</a>
+            <div class="opening-hour"> 
+                <i class="ri-time-line"></i>
+                營業時間：
+                
+            </div>
+            </div>
+
+            <div class="row-in">
+                <div class="row-left">
+                    <div class="phonenum">
+                        <i class="ri-phone-line"></i>
+                            電話：
+                    </div>
+                </div>
+                <div class="row-right">
+                    <Button onclick="Toggle(this)" class="btn1"><i class="ri-heart-fill"></i></Button>
+                </div>            
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="row-img">
+                <a href=introduction.html><img src="img/n6.jpeg" alt="鼎記食堂"></a>
+            </div>
+            <div class="row-content">
+            <a href="#">鼎記食堂</a>
+            <div class="opening-hour"> 
+                <i class="ri-time-line"></i>
+                營業時間：
+                
+            </div>
+            </div>
+
+            <div class="row-in">
+                <div class="row-left">
+                    <div class="phonenum">
+                        <i class="ri-phone-line"></i>
+                            電話：
+                    </div>
+                </div>
+                <div class="row-right">
+                    <Button onclick="Toggle(this)" class="btn1"><i class="ri-heart-fill"></i></Button>
+                </div>            
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="row-img">
+                <a href=introduction.html><img src="img/n7.jpeg" alt="Burger King"></a>
+            </div>
+            <div class="row-content">
+            <a href="#">Burger King</a>
+            <div class="opening-hour"> 
+                <i class="ri-time-line"></i>
+                營業時間：
+                
+            </div>
+            </div>
+
+            <div class="row-in">
+                <div class="row-left">
+                    <div class="phonenum">
+                        <i class="ri-phone-line"></i>
+                            電話：
+                    </div>
+                </div>
+                <div class="row-right">
+                    <Button onclick="Toggle(this)" class="btn1"><i class="ri-heart-fill"></i></Button>
+                </div>            
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="row-img">
+                <a href=introduction.html><img src="img/n8.jpeg" alt="一品鍋"></a>
+            </div>
+            <div class="row-content">
+            <a href="#">一品鍋</a>
+            <div class="opening-hour"> 
+                <i class="ri-time-line"></i>
+                營業時間：
+                
+            </div>
+            </div>
+
+            <div class="row-in">
+                <div class="row-left">
+                    <div class="phonenum">
+                        <i class="ri-phone-line"></i>
+                            電話：
+                    </div>
+                </div>
+                <div class="row-right">
+                    <Button onclick="Toggle(this)" class="btn1"><i class="ri-heart-fill"></i></Button>
+                </div>            
+            </div>
+        </div>
+
+</section>
+<div class="n-btn">
+    <a href="street.html" class="btn">查看所有</a>
+</div>
+
+
+    <!--- 學餐 --->
+    <section class="n-restaurants">
+        <div class="center-text">
+            <h3>學餐</h3>
+        </div> 
+
+        <div class="n-content">
+            <div class="row">
+                <div class="row-img">
+                    <a href=introduction.html><img src="img/n1.jpg" alt="熊讚啦啦"></a>
+                </div>
+                <div class="row-content">
+                <a href="#">熊讚啦啦</a>
+                <div class="opening-hour"> 
+                    <i class="ri-time-line"></i>
+                    營業時間：
+                    不固定，請查詢臉書
+                </div>
+                </div>
+
+                <div class="row-in">
+                    <div class="row-left">
+                        <div class="phonenum">
+                            <i class="ri-phone-line"></i>
+                                電話：
+                        </div>
+                    </div>
+                    <div class="row-right">
+                        <Button onclick="Toggle()" id="btnn1" class="btn1"><i class="ri-heart-fill"></i></Button>
+                    </div>            
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="row-img">
+                    <a href=introduction.html><img src="img/n2.jpeg" alt="No.17 White House"></a>
+                </div>
+                <div class="row-content">
+                    <a href="#">No.17 White House</a>
+                    <div class="opening-hour"> 
+                        <i class="ri-time-line"></i>
+                        營業時間：
+                        11:20 AM - 2PM, 5 - 7:30 PM
+                    </div>
+                </div>
+
+                <div class="row-in">
+                    <div class="row-left">
+                        <div class="phonenum">
+                            <i class="ri-phone-line"></i>
+                                電話：
+                        </div>
+                    </div>
+                    <div class="row-right">
+                        <Button onclick="Toggle()" id="btnn1" class="btn1"><i class="ri-heart-fill"></i></Button>
+                    </div>  
+                </div>          
+            </div>
+
+            <div class="row">
+                <div class="row-img">
+                    <a href=introduction.html><img src="img/n3.jpg" alt="八方雲集"></a>
+                </div>
+                <div class="row-content">
+                <a href="#">八方雲集</a>
+                <div class="opening-hour"> 
+                    <i class="ri-time-line"></i>
+                    營業時間：
+                    11AM - 8PM
+                </div>
+                </div>
+
+                <div class="row-in">
+                    <div class="row-left">
+                        <div class="phonenum">
+                            <i class="ri-phone-line"></i>
+                                電話：
+                        </div>
+                    </div>
+                    <div class="row-right">
+                        <Button onclick="Toggle()" id="btnn1" class="btn1"><i class="ri-heart-fill"></i></Button>
+                    </div>            
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="row-img">
+                    <a href=introduction.html><img src="img/n4.jpg" alt="飽咖咖"></a>
+                </div>
+                <div class="row-content">
+                <a href="#">飽咖咖</a>
+                <div class="opening-hour"> 
+                    <i class="ri-time-line"></i>
+                    營業時間：
+                    11:30 AM - 2PM, 5 - 8 PM
+                </div>
+                </div>
+
+                <div class="row-in">
+                    <div class="row-left">
+                        <div class="phonenum">
+                            <i class="ri-phone-line"></i>
+                                電話：
+                        </div>
+                    </div>
+                    <div class="row-right">
+                        <Button onclick="Toggle(this)" class="btn1"><i class="ri-heart-fill"></i></Button>
+                    </div>            
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="row-img">
+                    <a href=introduction.html><img src="img/n5.jpg" alt="咖哩老師"></a>
+                </div>
+                <div class="row-content">
+                <a href="#">咖哩老師</a>
+                <div class="opening-hour"> 
+                    <i class="ri-time-line"></i>
+                    營業時間：
+                    
+                </div>
+                </div>
+
+                <div class="row-in">
+                    <div class="row-left">
+                        <div class="phonenum">
+                            <i class="ri-phone-line"></i>
+                                電話：
+                        </div>
+                    </div>
+                    <div class="row-right">
+                        <Button onclick="Toggle(this)" class="btn1"><i class="ri-heart-fill"></i></Button>
+                    </div>            
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="row-img">
+                    <a href=introduction.html><img src="img/n6.jpeg" alt="鼎記食堂"></a>
+                </div>
+                <div class="row-content">
+                <a href="#">鼎記食堂</a>
+                <div class="opening-hour"> 
+                    <i class="ri-time-line"></i>
+                    營業時間：
+                    
+                </div>
+                </div>
+
+                <div class="row-in">
+                    <div class="row-left">
+                        <div class="phonenum">
+                            <i class="ri-phone-line"></i>
+                                電話：
+                        </div>
+                    </div>
+                    <div class="row-right">
+                        <Button onclick="Toggle(this)" class="btn1"><i class="ri-heart-fill"></i></Button>
+                    </div>            
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="row-img">
+                    <a href=introduction.html><img src="img/n7.jpeg" alt="Burger King"></a>
+                </div>
+                <div class="row-content">
+                <a href="#">Burger King</a>
+                <div class="opening-hour"> 
+                    <i class="ri-time-line"></i>
+                    營業時間：
+                    
+                </div>
+                </div>
+
+                <div class="row-in">
+                    <div class="row-left">
+                        <div class="phonenum">
+                            <i class="ri-phone-line"></i>
+                                電話：
+                        </div>
+                    </div>
+                    <div class="row-right">
+                        <Button onclick="Toggle(this)" class="btn1"><i class="ri-heart-fill"></i></Button>
+                    </div>            
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="row-img">
+                    <a href=introduction.html><img src="img/n8.jpeg" alt="一品鍋"></a>
+                </div>
+                <div class="row-content">
+                <a href="#">一品鍋</a>
+                <div class="opening-hour"> 
+                    <i class="ri-time-line"></i>
+                    營業時間：
+                    
+                </div>
+                </div>
+
+                <div class="row-in">
+                    <div class="row-left">
+                        <div class="phonenum">
+                            <i class="ri-phone-line"></i>
+                                電話：
+                        </div>
+                    </div>
+                    <div class="row-right">
+                        <Button onclick="Toggle(this)" class="btn1"><i class="ri-heart-fill"></i></Button>
+                    </div>            
+                </div>
+            </div>
+
+    </section>
+    <div class="n-btn">
+        <a href="school.html" class="btn">查看所有</a>
+    </div>
+
+    
+    <!--- custom js link --->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" 
+    crossorigin="anonymous"></script>
+    <script src="home.js"></script>
+
+</body>
+</html>

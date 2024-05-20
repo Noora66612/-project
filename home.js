@@ -58,50 +58,5 @@ document.addEventListener('click', function(event) {
 
 
 
-function sortFavorites() {
-    var select = document.getElementById("sort-select");
-    var sortingOrder = select.value;
-    var container = document.querySelector(".n-content");
-    var items = Array.from(container.getElementsByClassName("row"));
 
-    items.sort(function(a, b) {
-        var dateA = new Date(a.getAttribute("data-timestamp"));
-        var dateB = new Date(b.getAttribute("data-timestamp"));
 
-        if (sortingOrder === "oldesttonewest") {
-            return dateA - dateB;
-        } else if (sortingOrder === "newesttooldest") {
-            return dateB - dateA;
-        }
-    });
-
-    // Clear the container and append the sorted items
-    container.innerHTML = "";
-    items.forEach(function(item) {
-        container.appendChild(item);
-    });
-}
-
-function sortFavorites() {
-    var select = document.getElementById("sort-select");
-    var sortingOrder = select.value;
-    var container = document.querySelector(".n-content");
-    var items = Array.from(container.getElementsByClassName("row"));
-
-    items.sort(function(a, b) {
-        var dateA = new Date(a.getAttribute("data-timestamp"));
-        var dateB = new Date(b.getAttribute("data-timestamp"));
-
-        if (sortingOrder === "oldesttonewest") {
-            return dateA - dateB;
-        } else if (sortingOrder === "newesttooldest") {
-            return dateB - dateA;
-        }
-    });
-
-    // Clear the container and append the sorted items
-    container.innerHTML = "";
-    items.forEach(function(item) {
-        container.appendChild(item);
-    });
-}
