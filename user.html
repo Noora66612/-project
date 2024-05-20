@@ -1,199 +1,71 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <meta name = "veiwport" content = "width=device-width,initial-scale=1.0">
-    <title>User State Form</title>
-    <link rel= "stylesheet" href= "styles.css">
- 
-    <style>
-        body{
-          background-color: rgb(244, 231, 224);
-          font-family:Noto Serif TC;
-        }
+<?php
+if($_SERVER["REQUEST_METHOD"] == "POST"){
+    $servername = "localhost";
+    $username = "jennifer";
+    $password = "jennifer0216";
+    $dbname = "user";
 
-        h2, #gmail, #password, #gmail2, #password2, #comfirm_password{
-          width: 300px;
-          height: 35px;
-          margin: 20px;
-          color: #645753;
-        }
+    $conn = new mysqli($servername, $username, $password, $dbname);
 
-        h2{
-          font-size: 30px;
-          text-align: center;
-          margin: 50px;
-        }
-
-        h5 {
-          font-size: 12px;
-          position: absolute;
-          right: 0;
-          top: 250px;
-          margin: 55px;
-          color: #a29a98;
-        }
-        h5:hover{
-          color: black;
-        }
-
-        h6{
-          font-size: 12px;
-          text-align: center;
-          color: #766176;
-          margin: 1px;
-        }
-        h6:hover{
-          color: black;
-        }
-
-        #container1, #container2, #container3{
-          margin: 50px;
-          padding: 10px;
-          width: 400px;
-          height: 600px;
-          background-color: white;
-          border-radius: 80px;  /*圓角*/
-          border-top: 20px solid #645753;
-          /*定位對齊*/
-          position:relative;   
-          margin: auto;
-          top: 100px;
-          text-align:center;  
-        }
-
-        #container2, #container3{
-          visibility: hidden;
-          height: 600px;
-        }
-
-        .submit{
-          font-size: 15px;
-          color: rgb(70, 60, 56);  
-          background: #dec9c3;
-          width: 200px;
-          height: 40px;
-          margin: 70px;
-          padding: 10px;
-          border-radius: 8px;
-        }
-        .submit:hover{
-          color: rgb(247, 249, 249);
-          background: #191817;
-        }
-
-        input{
-          font-size: 12px;
-          padding: 5px;
-          border: none; 
-          border:solid 1px #ccc;
-          border-radius: 5px;
-        }
-    </style>
-
-    <script>
-      function show_hide() {
-        var login = document.getElementById("container1");
-        var signup = document.getElementById("container2");
-
-        if (login.style.display === "none") 
-        {
-          login.style.display = "block";  //login出現
-          document.getElementById("gmail").value="";
-          document.getElementById("password").value="";
-          signup.style.display = "none";  //signup消失
-          
-        } else {
-          login.style.display = "none";   
-          signup.style.display = "block"; 
-          signup.style.visibility="visible";
-          document.getElementById("gmail2").value="";
-          document.getElementById("password2").value="";
-          document.getElementById("comfirm_password").value="";
-          }
-        }
-
-        function show_forgetpassword() {
-          var forgetpassword = document.getElementById("container3");
-          var login = document.getElementById("container1");
-          var signup = document.getElementById("container2");
-
-          if (forgetpassword.style.visibility === "hidden" || forgetpassword.style.visibility === "") {
-            forgetpassword.style.visibility = "visible";
-            login.style.display = "none";
-            signup.style.display = "none";
-          } else {
-            forgetpassword.style.visibility = "hidden";
-            login.style.display = "block";
-            signup.style.display = "none";
-          }
-        }
-    </script>
-
-</head>
-
-  <body>
-
-    <div class="login_page">
-      <div id = "container1">
-
-        <div class = "login">  
-          <h2>登入</h2>
-
-          <form action="usermanagement.php">
-            <input type = "text" id= "gmail" name= "gmail" placeholder= "電子郵件" required>
-            <div class = "tab"></div>
-            <input type = "password" id= "password" name= "password" placeholder= "密碼" required>
-            <div class = "tab"></div>
-            <input type = "submit" value= "送出" class= "submit" onclick= "location.href= 'submitsuccessful.php'"> 
-          </form>  
-
-          <h6 onclick= "show_hide()">還沒有帳號？<u>註冊</u></h6>
-          <h5 onclick= "show_forgetpassword()"><u>忘記密碼</u>?</h5>
-
-        </div><!-- login end-->
-      </div><!-- container1 end-->
-    </div><!-- login_page end-->
+    if ($conn->connect_error){
+        die("連接資料庫失敗： ". $conn->connect_error);
+    } else {
+        echo "成功連接資料庫";
+    }
     
-    <div class = "signup_page">
-      <div id= "container2">
+    $gmail = $conn->real_escape_string($_POST['gmail']);
+    $raw_password = $_POST['password'];
+    $confirm_password = $_POST['confirm_password'];
 
-        <div class = "signup">  
-          <h2>註冊</h2>
+    $email_parts = explode('@', $gmail);
+    $account = $conn->real_escape_string($email_parts[0]);
 
-          <form action = "statemanagement.php">
-            <input type= "text" id= "gmail2" name= "gmail" placeholder="電子郵件" required>
-            <div class = "tab"></div>
-            <input type= "password" id= "password2" name= "password" placeholder="密碼" required>
-            <div class = "tab"></div>
-            <input type= "text" id= "comfirm_password" name= "comfirm_password" placeholder="確認密碼" required>
-            <div class= "tab"></div>            
-            <input type= "submit" value= "送出" class= "submit">
-          </form>  
+    $error_message = "";
 
-          <h6 onclick = "show_hide()">已經有帳號？<u>登入</u></h6>
-          
-        </div><!-- signup end-->
-      </div><!-- container2 end-->
-    </div><!-- signup_page end--> 
-  
-    <div class="forgetpassword_page">
-      <div id = "container3">
+    // 驗證電子郵件地址
+    if(!filter_var($gmail, FILTER_VALIDATE_EMAIL)){
+        $errror_message = "請輸入有效的郵件地址。<br>";
+    }
 
-        <div class = "forgegtpassword">  
-          <h2>忘記密碼？</h2>
+    // 驗證密碼
+    if(strlen($raw_password) <= 5 || !preg_match("/^(?=.*[A-Za-z])(?=.*\d)/", $raw_password)){
+        $error_message .= "密碼必須包含至少一個英文字母和一個數字，長度超過5。<br>";
+    }
 
-          <form action="statemanagement.php">
-            <input type = "text" id= "gmail" name= "gmail" placeholder= "電子郵件" required>
-            <div class = "tab"></div>
-            <input type = "password" id= "password" name= "password" placeholder= "重設密碼" required>
-            <div class = "tab"></div>
-            <input type = "submit" value= "送出" class= "submit" onclick= "location.href= 'submitsuccessful.php'">  
-          </form>  
+    // 確認密碼匹配
+    if($raw_password !== $confirm_password){
+        $error_message .= "確認密碼與密碼不一致。<br>";
+    }
 
-        </div><!-- forgetpassword end-->
-      </div><!-- container3 end-->
-    </div><!-- forgetpassword_page end-->
+    // 檢查帳號是否已存在
+    $account_check_query = "SELECT * FROM members WHERE account = '$account' LIMIT 1";
+    $result = $conn->query($account_check_query);
+    if ($result && $result-num>rows > 0){
+        $error_message .= "帳號已存在，請選擇另一個帳號。<br>";
+    }
 
-  </body>
-</html>
+    if(!empty($error_message)){
+        echo $error_message;
+        echo '<button onclick="goBack()">返回修改</button><br>';
+        echo '<script>
+            function goBack(){
+                window.history.back();
+            }
+        </script>';
+    }else{
+        $salt = bin2hex(random_bytes(16));
+        $hashedPassword = hash('sha256', $raw_password . $salt);
+
+        $sql = "INSERT INTO members (gmail, account, hashed_password, salt) VALUES ('$gmail', '$account', '$hashedPassword', '$salt')";
+
+        if($conn->query($sql) === TRUE){
+            echo "註冊成功，您的帳號為". $account;
+            echo '<script>window.location.href="loginWeb.php";</script>';
+        }else{ 
+            echo "註冊失敗： " . $conn->error;
+        }
+    }
+
+    $conn->close();
+}
+?>
