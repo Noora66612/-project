@@ -53,8 +53,8 @@
           width: 400px;
           height: 600px;
           background-color: white;
-          border-radius: 80px;
-          border-top: 20px solid #645753;
+          border-radius: 80px;  /*圓角*/
+          border-top: 20px solid #645753;  /*定位對齊*/
           position: relative;
           margin: auto;
           top: 100px;
@@ -146,8 +146,8 @@
       <div class="login">  
         <h2>登入</h2>
 
-        <form action="usermanagement.php">
-          <input type="text" id="gmail" name="gmail" placeholder="電子郵件" required>
+        <form action="usermanagement.php" method="POST">
+          <input type="email" id="gmail" name="gmail" placeholder="電子郵件" required>
           <div class="tab"></div>
           <input type="password" id="password" name="password" placeholder="密碼" required>
           <div class="tab"></div>
@@ -167,12 +167,12 @@
       <div class="signup">  
         <h2>註冊</h2>
 
-        <form action="statemanagement.php">
-          <input type="text" id="gmail2" name="gmail" placeholder="電子郵件" required>
+        <form action="statemanagement.php" method="POST">
+          <input type="email" id="gmail2" name="gmail" placeholder="電子郵件" required>
           <div class="tab"></div>
-          <input type="password" id="password2" name="password" placeholder="密碼" required>
+          <input type="password" id="password2" name="password" placeholder="密碼(至少一個英文字母和數字，長度超過5)" required>
           <div class="tab"></div>
-          <input type="text" id="comfirm_password" name="comfirm_password" placeholder="確認密碼" required>
+          <input type="password" id="comfirm_password" name="comfirm_password" placeholder="確認密碼" required>
           <div class="tab"></div>            
           <input type="submit" value="送出" class="submit">
         </form>  
@@ -189,10 +189,10 @@
       <div class="forgetpassword">  
         <h2>忘記密碼？</h2>
 
-        <form action="statemanagement.php">
-          <input type="text" id="gmail3" name="gmail" placeholder="電子郵件" required>
+        <form action="reserpassword.php" method = "POST">
+          <input type="email" id="gmail3" name="gmail" placeholder="電子郵件" required>
           <div class="tab"></div>
-          <input type="password" id="password3" name="password" placeholder="重設密碼" required>
+          <input type="password" id="password3" name="password" placeholder="重設密碼(至少一個英文字母和數字，長度超過5)" required>
           <div class="tab"></div>
           <input type="submit" value="送出" class="submit" onclick="location.href='submitsuccessful.php'">  
         </form>
