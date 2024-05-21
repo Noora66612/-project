@@ -1,16 +1,29 @@
+@font-face {
+    font-family: '思源宋體';
+    src: url('fonts/SourceHanSerifCN-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
 *{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
     list-style: none;
+    text-decoration: none;
     scroll-behavior: smooth;
+    font-family: '思源宋體';
 }
 
 :root{
-    --hdbg-color: #999C7F;
+    --hdbg-color: #645753;
     --hdtext-color: #ffffff;
-    --bg-color: #ffffff;
-    --text-color: #000000;
+    --bg-color: rgb(242, 237, 235);
+    --text-color: rgb(86, 65, 51);
     --main-color: #f0f0f0;
-    --other-color: #ffc633;
-    --second-color: #524d4d;
+    --other-color: #D64C4C;
+    --second-color: black;
+
     --h1-font: 5.5rem;
     --h2-font: 3.5rem;
     --p-font: 1rem;
@@ -183,7 +196,7 @@ header{
 }
 
 body{
-    background-color: rgb(244, 231, 224);
+    background-color: rgb(243, 240, 238);
     font-family:標楷體;
     color:rgb(86, 65, 51)
 }
@@ -269,14 +282,26 @@ n-content{
     margin-top: 1.5rem;
 }
 
+.row-content{
+    display: grid;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+    width: 300px;
+    margin: 0 auto;
+}
+
 .row-img{
     overflow: hidden; 
     margin-bottom: 15px;
+    width: 300px; /* 固定寬度 */
+    margin: 0 auto;
 }
 .row-img img{
+    object-fit: cover; /* 保持比例並裁剪 */
     display: block;
-    width: 100%;
     cursor: pointer;
+    border-radius: 10%;
 }
 
 .row a{
@@ -293,52 +318,35 @@ n-content{
     color: var(--second-color);
 }
 .opeming-hour{
-    color: var(--second-color);
+    display: flex;
+    color: #524d4d;
+    height: 50px;
 }
 .row-in{
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-top: 5px;
+    width: 300px;
+    margin: 0 auto;
 }
-.類型{
-    color: var(--second-color);
+.phonenum{
+    color: #524d4d;
 }
 
 .row-right a{
     font-size: 20px;
     font-weight: 400;
-    color: var(--second-color);
+    color: #524d4d;
 }
 
-.n-btn{
-    text-align: center;
-    margin-top: 2rem;
-}
-.btn{
-    display: inline-block;
-    padding: 14px 42px;
-    background: transparent;
-    color: var(--text-color);
-    font-size: 15px;
-    font-weight: 500px;
-    border: 1px solid var(--second-color);
-    border-radius: 30px;
-    transition: all 0.6s;
-}
-.btn:hover{
-    background: var(--text-color);
-    border: 1px solid var(--text-color);
-    color: var(--bg-color);
-    transform: scale(0.9) translateY(-6px);
-}
 .btn1{
     background: transparent;
     border: none;
     outline: none;
     font-size: 20px;
     font-weight: 400;
-    color: var(--second-color);
+    color: #524d4d;
 }
 
 .btn1 :hover{

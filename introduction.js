@@ -40,6 +40,54 @@ btns.forEach(function(btn) {
     });
 });
 
+
+const textarea = document.getElementById('review');
+const placeholder = document.getElementById('placeholder');
+const cancelButton = document.getElementById('cancel');
+const submitButton = document.getElementById('submit');
+const commentsContainer = document.getElementById('comments-container');
+
+
+cancelButton.addEventListener('click', function() {
+    textarea.value = '';
+    placeholder.style.display = 'block';
+    adjustHeight(); // 重置高度
+});
+
+submitButton.addEventListener('click', function() {
+    const reviewText = textarea.value.trim();
+    if (reviewText) {
+        alert('送出評論: ' + reviewText); // 替換為實際的提交操作
+        textarea.value = '';
+        placeholder.style.display = 'block';
+        adjustHeight(); 
+    } else {
+        alert('請輸入評論');
+    }
+});
+
+function adjustHeight() {
+    textarea.style.height = 'auto';
+    textarea.style.height = (textarea.scrollHeight) + 'px';
+}
+
+function addComment(text, year) {
+    const commentDiv = document.createElement('div');
+    commentDiv.className = 'comment';
+
+    const textDiv = document.createElement('div');
+    textDiv.className = 'text';
+    textDiv.textContent = text;
+
+    const yearDiv = document.createElement('div');
+    yearDiv.className = 'year';
+    yearDiv.textContent = year;
+
+    commentDiv.appendChild(textDiv);
+    commentDiv.appendChild(yearDiv);
+    commentsContainer.appendChild(commentDiv);
+}
+
 const searchInput = document.querySelector('.search-input');
 const searchForm = document.querySelector('.search-form'); // Assuming the search form element
 
@@ -58,50 +106,28 @@ document.addEventListener('click', function(event) {
 
 
 
-function sortFavorites() {
-    var select = document.getElementById("sort-select");
-    var sortingOrder = select.value;
-    var container = document.querySelector(".n-content");
-    var items = Array.from(container.getElementsByClassName("row"));
 
-    items.sort(function(a, b) {
-        var dateA = new Date(a.getAttribute("data-timestamp"));
-        var dateB = new Date(b.getAttribute("data-timestamp"));
 
-        if (sortingOrder === "oldesttonewest") {
-            return dateA - dateB;
-        } else if (sortingOrder === "newesttooldest") {
-            return dateB - dateA;
+// script.js
+
+document.addEventListener('DOMContentLoaded', function() {
+    const textarea = document.getElementById('review');
+
+    // 当textarea获得焦点时，清空placeholder
+    textarea.addEventListener('focus', function() {
+        textarea.setAttribute('placeholder', '');
+    });
+
+    // 当textarea失去焦点且为空时，恢复placeholder
+    textarea.addEventListener('blur', function() {
+        if (textarea.value.trim() === '') {
+            textarea.setAttribute('placeholder', '留下我的評論...');
         }
     });
 
-    // Clear the container and append the sorted items
-    container.innerHTML = "";
-    items.forEach(function(item) {
-        container.appendChild(item);
-    });
-}
+    // 如果textarea中有内容，隐藏placeholder
+    if (textarea.value.trim() !== '') {
+        textarea.setAttribute('placeholder', '');
+    }
+});
 
-function sortFavorites() {
-    var select = document.getElementById("sort-select");
-    var sortingOrder = select.value;
-    var container = document.querySelector(".n-content");
-    var items = Array.from(container.getElementsByClassName("row"));
-
-    items.sort(function(a, b) {
-        var dateA = new Date(a.getAttribute("data-timestamp"));
-        var dateB = new Date(b.getAttribute("data-timestamp"));
-
-        if (sortingOrder === "oldesttonewest") {
-            return dateA - dateB;
-        } else if (sortingOrder === "newesttooldest") {
-            return dateB - dateA;
-        }
-    });
-
-    // Clear the container and append the sorted items
-    container.innerHTML = "";
-    items.forEach(function(item) {
-        container.appendChild(item);
-    });
-}
