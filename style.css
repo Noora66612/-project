@@ -5,7 +5,10 @@
     font-style: normal;
 }
 
-*{
+
+
+/* 全局設置 */
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -13,7 +16,12 @@
     text-decoration: none;
     scroll-behavior: smooth;
     font-family: '思源宋體';
+    font-family: '思源宋體';
 }
+
+
+  
+
   
 :root{
     --hdbg-color: #645753;
@@ -381,4 +389,9 @@ header{
 
 .btn1 :hover{
     cursor: pointer;
+}
+
+.modal-header .modal-title {
+    display: flex;
+    align-items: center;
 }
