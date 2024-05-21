@@ -1,11 +1,24 @@
-*{
+@font-face {
+    font-family: '思源宋體';
+    src: url('fonts/SourceHanSerifCN-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+/* 全局設置 */
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     list-style: none;
     text-decoration: none;
     scroll-behavior: smooth;
+    font-family: '思源宋體';
 }
+
+
   
 :root{
     --hdbg-color: #999C7F;
@@ -323,4 +336,9 @@ header{
 
 .btn1 :hover{
     cursor: pointer;
+}
+
+.modal-header .modal-title {
+    display: flex;
+    align-items: center;
 }

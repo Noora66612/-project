@@ -191,6 +191,7 @@ body{
 h3{
     margin: 120px 0 0;
     font-size: 30px;
+    text-align: center;
 }
 h3 i.fas {
     padding-right: 7px; 
@@ -247,7 +248,8 @@ n-content{
 }
 .row-img{
     overflow: hidden; 
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+    margin: 0 auto;
 }
 .row-img img{
     display: block;
