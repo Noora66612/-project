@@ -1,6 +1,5 @@
-myfavfix.html
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -28,7 +27,7 @@ myfavfix.html
 <body>
     <!--- header --->
     <header>
-        <a href="home.html" class="logo">央央熊食在</a>
+        <a href="#" class="logo">央央熊食在</a>
         <ul class="navlist">
             <li class="nav-item">
                 <a href="home.html" class="nav-link">首頁</a>
@@ -63,14 +62,14 @@ myfavfix.html
         <a href="all.html">所有餐廳</a>
         <a href="school.html">學餐</a>
         <a href="backdoor.html">後門</a>
-        <a href="street.html">宵夜街</a>
+        <a href="#" data-bs-toggle="modal" data-bs-target="#contactModal">聯絡我們</a>   
     </div>
 
     <!--- 過濾篩選器 --->
     <div class="container">
         <h3><i class="ri-heart-fill" style="margin-right: 5px;"></i>我的收藏</h3>
         <div class="sorting-options">
-            <label>排序方式：</label>
+            <label for="sort-select">排序方式：</label>
             <select id="sort-select" onchange="sortFavorites()">
                 <option value="oldesttonewest">由舊到新</option>
                 <option value="newesttooldest">由新到舊</option>
@@ -80,17 +79,19 @@ myfavfix.html
         <!--- 我的收藏 --->
         <section class="favorite-restaurants">  
             <div class="n-content">
-                <div class="row">
+                <div class="row" data-timestamp="2024-05-19T10:00:00">
                     <div class="row-img">
                         <img src="img/n1.jpg" alt="熊讚啦啦">
                     </div>
-                    <div class="row-content">
-                    <a href="#">熊讚啦啦</a>
+                    <a href=introduction.html>熊讚啦啦</a>
                     <div class="opening-hour"> 
                         <i class="ri-time-line"></i>
                         營業時間：
-                        不固定，請查詢臉書
+                        <br>不固定，請查詢臉書
                     </div>
+                    <div class="closeday">
+                        <i class="ri-calendar-close-line"></i>
+                        公休日：
                     </div>
     
                     <div class="row-in">
@@ -101,24 +102,26 @@ myfavfix.html
                             </div>
                         </div>
                         <div class="row-right">
-                            <Button onclick="Toggle()" id="btnn1" class="btn1"><i class="ri-heart-fill"></i></Button>
+                            <button class="btn1" style="color: #D64C4C;"><i class="ri-heart-fill"></i></button>
                         </div>            
                     </div>
                 </div>
     
-                <div class="row">
+                <div class="row" data-timestamp="2024-05-18T14:00:00">
                     <div class="row-img">
                         <img src="img/n2.jpeg" alt="No.17 White House">
                     </div>
-                    <div class="row-content">
-                        <a href="#">No.17 White House</a>
-                        <div class="opening-hour"> 
-                            <i class="ri-time-line"></i>
-                            營業時間：
-                            11:20 AM - 2PM, 5 - 7:30 PM
-                        </div>
+                    <a href="introduction.html">No.17 White House</a>
+                    <div class="opening-hour"> 
+                        <i class="ri-time-line"></i>
+                        營業時間：
+                        <br>不固定，請查詢臉書
                     </div>
-    
+                    <div class="closeday">
+                        <i class="ri-calendar-close-line"></i>
+                        公休日：
+                    </div>
+
                     <div class="row-in">
                         <div class="row-left">
                             <div class="phonenum">
@@ -127,23 +130,25 @@ myfavfix.html
                             </div>
                         </div>
                         <div class="row-right">
-                            <Button onclick="Toggle()" id="btnn1" class="btn1"><i class="ri-heart-fill"></i></Button>
+                            <button class="btn1" style="color: #D64C4C;"><i class="ri-heart-fill"></i></button>
                         </div>  
                     </div>          
                 </div>
     
-                <div class="row">
+                <div class="row" data-timestamp="2024-05-17T11:00:00">
                     <div class="row-img">
                         <img src="img/n3.jpg" alt="八方雲集">
                     </div>
-                    <div class="row-content">
-                    <a href="#">八方雲集</a>
+                    <a href="introduction.html">八方雲集</a>
                     <div class="opening-hour"> 
-                        <i class="ri-time-line"></i>
-                        營業時間：
-                        11AM - 8PM
-                    </div>
-                    </div>
+                    <i class="ri-time-line"></i>
+                    營業時間：
+                    <br>不固定，請查詢臉書
+                </div>
+                <div class="closeday">
+                    <i class="ri-calendar-close-line"></i>
+                    公休日：
+                </div>
     
                     <div class="row-in">
                         <div class="row-left">
@@ -153,22 +158,24 @@ myfavfix.html
                             </div>
                         </div>
                         <div class="row-right">
-                            <Button onclick="Toggle()" id="btnn1" class="btn1"><i class="ri-heart-fill"></i></Button>
+                            <button class="btn1" style="color: #D64C4C;"><i class="ri-heart-fill"></i></button>
                         </div>            
                     </div>
                 </div>
     
-                <div class="row">
+                <div class="row" data-timestamp="2024-05-16T12:00:00">
                     <div class="row-img">
                         <img src="img/n4.jpg" alt="飽咖咖">
                     </div>
-                    <div class="row-content">
-                    <a href="#">飽咖咖</a>
+                    <a href="introduction.html">飽咖咖</a>
                     <div class="opening-hour"> 
                         <i class="ri-time-line"></i>
                         營業時間：
-                        11:30 AM - 2PM, 5 - 8 PM
+                        <br>不固定，請查詢臉書
                     </div>
+                    <div class="closeday">
+                        <i class="ri-calendar-close-line"></i>
+                        公休日：
                     </div>
     
                     <div class="row-in">
@@ -179,11 +186,26 @@ myfavfix.html
                             </div>
                         </div>
                         <div class="row-right">
-                            <Button onclick="Toggle(this)" class="btn1"><i class="ri-heart-fill"></i></Button>
+                            <button class="btn1" style="color: #D64C4C;"><i class="ri-heart-fill"></i></button>
                         </div>            
                     </div>
+                </div>
             </div>
         </section>
+    </div>
+
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="contactModalLabel"><i class="ri-mail-line" style="margin-right: 10px;"></i>聯絡我們</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>哈囉！有任何問題歡迎聯絡信箱：<a href="mailto:ncufood@gmail.com">ncufood@gmail.com</a>，我們會儘速處理唷！</p>
+                </div>
+            </div>
+        </div>
     </div>
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" 
@@ -192,3 +214,5 @@ myfavfix.html
     <script src="myfavfix.js"></script>
 </body>
 </html>
+
+
