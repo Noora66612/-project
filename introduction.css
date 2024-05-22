@@ -17,13 +17,13 @@
 }
   
 :root{
-    --hdbg-color: #645753;
+    --hdbg-color: #999C7F;
     --hdtext-color: #ffffff;
-    --bg-color: rgb(242, 237, 235);
+    --bg-color: #f7f8f0bd;
     --text-color: rgb(86, 65, 51);
     --main-color: #f0f0f0;
     --other-color: #D64C4C;
-    --second-color: black;
+    --second-color: #524d4d;
 
     --h1-font: 5.5rem;
     --h2-font: 3.5rem;
@@ -279,9 +279,9 @@ header{
     width: 85%;
     max-width: 2000px;
     margin: 150px auto 20px auto;
-    border: 1px solid #ccc;
+    border: 1px solid #e4dcc4;
     padding: 30px;
-    background-color: rgb(188, 170, 161);
+    background-color: #d2c9ad;
     border-radius: 30px;
     display: flex; /* 使用 Flexbox 佈局 */
     align-items: center; /* 垂直方向居中 */
@@ -311,10 +311,12 @@ header{
     flex-direction: column;
 }
 .store-details h2 {
-    margin: 0 0 10px 0;
+    font-weight: 700px;
+    margin: 0 0 10px 0; 
 }
 
 .detail-item {
+    font-weight: 500px;
     text-decoration: none;
     color: var(--text-color);
     margin-top: 10px;
@@ -349,7 +351,7 @@ header{
     margin: 20px auto; /* 與上方的橫條間距 */
     border: 1px solid #ccc;
     padding: 40px;
-    background-color: rgb(215, 198, 177);
+    background-color: rgb(202,188,169);
     border-radius: 30px;
     position: relative; /* 增加相對定位 */
 }
@@ -375,7 +377,7 @@ header{
 .placeholder {
     font-size: 16px;
     padding: 10px;
-    color: rgb(85, 45, 31);
+    color: var(--text-color);
     position: absolute;
     top: 0;
     left: 0;
@@ -383,7 +385,7 @@ header{
 }
 
 textarea::placeholder {
-    color: rgb(85, 45, 31);
+    color: var(--text-color);
     font-size: 16px;
 }
 textarea:focus {
@@ -398,14 +400,14 @@ textarea:focus {
 .button {
     padding: 8px 16px;
     margin-left: 10px;
-    background-color: rgb(137, 101, 88);
+    background-color: rgb(85, 45, 31);
     color: white;
     border: none;
     border-radius: 20px;
     cursor: pointer;
 }
 .button:hover {
-    background-color: rgb(60, 30, 20);
+    background-color: rgb(60,30,20);
 }
 
 .comments-container {
@@ -448,4 +450,9 @@ textarea:focus {
 .comment .year {
     margin-left: 20px;
     color: rgb(85, 45, 31);
+}
+
+.modal-header .modal-title {
+    display: flex;
+    align-items: center;
 }
