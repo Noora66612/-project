@@ -34,19 +34,19 @@
         <a href="#" class="logo">央央熊食在</a>
         <ul class="navlist">
             <li class="nav-item">
-                <a href=home.html class="nav-link">首頁</a>
+                <a href=home.php class="nav-link">首頁</a>
             </li>
             <li class="nav-item">
-                <a href=all.html class="nav-link">所有餐廳</a>
+                <a href=all.php class="nav-link">所有餐廳</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   用餐地點
                 </a>
                 <ul class="dropdown-menu">
-                  <li><a href=school.html class="dropdown-item">學餐</a></li>
-                  <li><a href=backdoor.html class="dropdown-item">後門</a></li>
-                  <li><a href=street.html class="dropdown-item">宵夜街</a></li>
+                  <li><a href=school.php class="dropdown-item">學餐</a></li>
+                  <li><a href=backdoor.php class="dropdown-item">後門</a></li>
+                  <li><a href=street.php class="dropdown-item">宵夜街</a></li>
                 </ul>
             </li>
         </ul> 
@@ -69,11 +69,11 @@
     <!--- sidebar --->
     <div id="mySidebar" class="sidebar">
         <a href="javascript:void(0)" class="close-btn" id="close-btn">&times;</a>
-        <a href="home.html">首頁</a>
-        <a href=all.html>所有餐廳</a>
-        <a href=school.html>學餐</a>
-        <a href="backdoor.html">後門</a>
-        <a href="street.html">宵夜街</a>
+        <a href="home.php">首頁</a>
+        <a href=all.php>所有餐廳</a>
+        <a href=school.php>學餐</a>
+        <a href="backdoor.php">後門</a>
+        <a href="street.php">宵夜街</a>
         <a href="#">聯絡我們</a>
     </div>
 
@@ -195,7 +195,7 @@
         </div>
     </section>
     <div class="n-btn">
-        <a href=all.html class="btn">查看所有</a>
+        <a href=all.php class="btn">查看所有</a>
     </div>
 
     <!--- 後門餐廳 --->
@@ -257,7 +257,7 @@
         </div>
     </section>
     <div class="n-btn">
-        <a href=backdoor.html class="btn">查看所有</a>
+        <a href=backdoor.php class="btn">查看所有</a>
     </div>
 
     <!--- 宵夜街餐廳 --->
@@ -319,7 +319,7 @@
         </div>
     </section>
     <div class="n-btn">
-        <a href=street.html class="btn">查看所有</a>
+        <a href=street.php class="btn">查看所有</a>
     </div>
 
     <!--- 學餐餐廳 --->
@@ -381,7 +381,7 @@
         </div>
     </section>
     <div class="n-btn">
-        <a href=school.html class="btn">查看所有</a>
+        <a href=school.php class="btn">查看所有</a>
     </div>
     <!--- custom js link --->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" 
