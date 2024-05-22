@@ -27,7 +27,7 @@
 <body>
     <!--- header --->
     <header>
-        <a href="#" class="logo">央央熊食在</a>
+        <a href=home.html class="logo">央央熊食在</a>
         <ul class="navlist">
             <li class="nav-item">
                 <a href="home.html" class="nav-link">首頁</a>
@@ -47,9 +47,16 @@
             </li>
         </ul> 
     
-        <div class="nav-right">
-            <a href="#"><i class="ri-search-line"></i></a>
-            <a href="myfavfix.html"><i class="ri-heart-line"></i></a> <!-- 這裡是設置連結到我的收藏頁面 -->
+        <div class="nav-right d-flex align-items-center">
+            <form class="d-flex align-items-center search-form" style="margin-right: 15px;">
+                <form class="d-flex align-items-center search-form" style="margin-right: 15px;">
+                    <input class="form-control me-2 search-input" type="search" placeholder="搜尋" aria-label="Search">
+                    <button class="search-btn" type="button">
+                        <i class="ri-search-line"></i>
+                    </button>
+                </form> 
+            </form>            
+            <a href="myfavfix.html"><i class="ri-heart-line"></i></a>
             <a href="user.html"><i class="ri-user-line"></i></a>
             <div class="bx bx-menu" id="menu-icon"></div>
         </div>  

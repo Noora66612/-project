@@ -26,7 +26,7 @@ document.addEventListener("scroll", function(event) {
     }
 });
 
-var btns = document.querySelectorAll(".btn1");
+var btns = document.querySelectorAll(".right-bottom-button");
 btns.forEach(function(btn) {
     btn.addEventListener("click", function() {
         var computedStyle = window.getComputedStyle(btn);

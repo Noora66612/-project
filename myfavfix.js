@@ -73,6 +73,23 @@ function sortFavorites() {
     });
 }
 
+const searchInput = document.querySelector('.search-input');
+const searchForm = document.querySelector('.search-form'); // Assuming the search form element
+
+// Toggle search box visibility on search button click
+document.querySelector('.search-btn').addEventListener('mousedown', function(event) {
+  event.preventDefault(); // Prevent default behavior
+  searchInput.classList.toggle('active');
+});
+
+// Close search box on click outside the search form
+document.addEventListener('click', function(event) {
+  if (!searchForm.contains(event.target) && searchInput.classList.contains('active')) {
+    searchInput.classList.remove('active');
+  }
+});
+
+
 container.innerHTML = "";
 items.forEach(function(item) {
     container.appendChild(item);
