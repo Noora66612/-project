@@ -16,13 +16,13 @@
 }
   
 :root{
-    --hdbg-color: #645753;
+    --hdbg-color: #999C7F;
     --hdtext-color: #ffffff;
-    --bg-color: rgb(242, 237, 235);
+    --bg-color: #f7f8f0bd;
     --text-color: rgb(86, 65, 51);
     --main-color: #f0f0f0;
     --other-color: #D64C4C;
-    --second-color: black;
+    --second-color: #524d4d;
 
     --h1-font: 5.5rem;
     --h2-font: 3.5rem;
@@ -196,16 +196,6 @@ header{
 }
 
 .recs{
-    padding: 10px 5% 30px;
-}
-.n-restaurants{
-    padding: 70px 5% 30px;
-}
-.center-text{
-    text-align: center;
-}
-
-.recs{
     padding: 120px 5% 30px;
 }
 .n-restaurants{
@@ -259,12 +249,15 @@ header{
 }
 .row a:hover{
     transform: scale(1.03);
-    color: #524d4d;
+    color: var(--second-color);
 }
 .opening-hour{
     display: flex;
-    color: #524d4d;
-    height: 50px;
+    color: var(--second-color);
+}
+.closeday{
+    display: flex;
+    color: var(--second-color);
 }
 .row-in{
     display: flex;
@@ -275,13 +268,13 @@ header{
     margin: 0 auto;
 }
 .phonenum{
-    color: #524d4d;
+    color: var(--second-color);
 }
 
 .row-right a{
     font-size: 20px;
     font-weight: 400;
-    color: #524d4d;
+    color: var(--second-color);
 }
 
 
@@ -297,7 +290,7 @@ header{
     color: var(--text-color);
     font-size: 15px;
     font-weight: 500px;
-    border: 1px solid #524d4d;
+    border: 1px solid var(--second-color);
     border-radius: 30px;
     transition: all 0.6s;
     margin: 0 auto;
@@ -390,9 +383,14 @@ header{
     outline: none;
     font-size: 20px;
     font-weight: 400;
-    color: #524d4d;
+    color: var(--second-color);
 }
 
 .btn1 :hover{
     cursor: pointer;
+}
+
+.modal-header .modal-title {
+    display: flex;
+    align-items: center;
 }

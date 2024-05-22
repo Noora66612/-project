@@ -57,6 +57,9 @@ document.addEventListener('click', function(event) {
 });
 
 
-
+container.innerHTML = "";
+items.forEach(function(item) {
+    container.appendChild(item);
+});
 
 

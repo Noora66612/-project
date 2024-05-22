@@ -232,9 +232,10 @@ label{
 }
 
 .n-content{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, auto));
-    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: center;
     gap: 1.5rem;
     margin-top: 4rem;
 }

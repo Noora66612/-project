@@ -131,3 +131,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
+
+container.innerHTML = "";
+items.forEach(function(item) {
+    container.appendChild(item);
+});
