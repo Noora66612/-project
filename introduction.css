@@ -1,22 +1,21 @@
 @font-face {
-    font-family: '思源宋體';
-    src: url('fonts/SourceHanSerifCN-Regular.otf') format('opentype');
+    font-family: "思源宋體";
+    src: url("fonts/SourceHanSerifCN-Regular.otf") format("opentype");
     font-weight: normal;
     font-style: normal;
-}
-
-*{
+  }
+  
+  * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     list-style: none;
     text-decoration: none;
     scroll-behavior: smooth;
-    font-family: '思源宋體';
-
-}
+    font-family: "思源宋體";
+  }
   
-:root{
+  :root {
     --hdbg-color: #999C7F;
     --hdtext-color: #ffffff;
     --bg-color: #f7f8f0bd;
@@ -28,13 +27,13 @@
     --h1-font: 5.5rem;
     --h2-font: 3.5rem;
     --p-font: 1rem;
-}
-body{
+  }
+  body {
     background-color: var(--bg-color);
     color: var(--text-color);
-}
-
-header{
+  }
+  
+  header {
     position: fixed;
     top: 0;
     right: 0;
@@ -47,19 +46,19 @@ header{
     align-items: center;
     justify-content: space-between;
     transition: all 0.6s;
-}
-
-.logo{
+  }
+  
+  .logo {
     font-size: 36px;
     font-weight: 800;
     color: var(--hdtext-color);
     text-decoration: none;
-}
-
-.navlist{
+  }
+  
+  .navlist {
     display: flex;
-}
-.navlist a{
+  }
+  .navlist a {
     display: inline-block;
     margin: 0 60px;
     margin-top: 15px;
@@ -68,49 +67,48 @@ header{
     color: var(--hdtext-color);
     transition: all 0.6s;
     text-decoration: none;
-}
-.navlist a:hover{
+  }
+  .navlist a:hover {
     transform: translateY(-4px);
     color: var(--second-color);
-}
-
-
-.nav-right{
+  }
+  
+  .nav-right {
     display: flex;
     align-items: center;
-}
-.nav-right a{
+  }
+  .nav-right a {
     display: inline-block;
     font-size: 22px;
     color: var(--hdtext-color);
     margin: 0 15px;
     transition: all 0.6s;
     text-decoration: none;
-}
-.nav-right a:hover{
+  }
+  .nav-right a:hover {
     transform: translateY(-5px) scale(1.1);
     color: var(--second-color);
-}
-
-.search-btn {
+  }
+  
+  .search-btn {
     border: none;
     background: none;
     padding: 0;
     color: var(--hdtext-color);
-}
-
-.search-btn:hover {
+  }
+  
+  .search-btn:hover {
     transform: translateY(-5px) scale(1.1);
     color: var(--second-color);
-}
-
-.search-btn i {
+  }
+  
+  .search-btn i {
     margin-left: 10px;
     font-size: 1.25rem;
     transition: all 0.6s;
-}
-
-.search-input {
+  }
+  
+  .search-input {
     width: 0;
     padding: 5px;
     font-size: 1rem;
@@ -118,40 +116,39 @@ header{
     border-radius: 5px;
     transition: width 0.6s;
     opacity: 0;
-}
-
-.search-input.active {
+  }
+  
+  .search-input.active {
     width: 200px; /* 需要的长度 */
     opacity: 1;
-}
-
-
-#menu-icon{
+  }
+  
+  #menu-icon {
     font-size: 35px;
     color: var(--hdtext-color);
     z-index: 10001;
     margin-left: 10px;
     cursor: pointer;
-}
-.dropdown-toggle:focus{
+  }
+  .dropdown-toggle:focus {
     color: var(--second-color);
-}
-.dropdown-menu {
+  }
+  .dropdown-menu {
     background-color: var(--hdbg-color);
     color: var(--hdtext-color);
-}
-.dropdown-item{
+  }
+  .dropdown-item {
     text-align: left;
-}
-.dropdown-menu:hover {
+  }
+  .dropdown-menu:hover {
     margin-top: 10px;
     background-color: var(--hdbg-color);
-}
-.dropdown-item:hover{
+  }
+  .dropdown-item:hover {
     background-color: transparent;
-}
-
-.sidebar {
+  }
+  
+  .sidebar {
     z-index: 999;
     height: 100%;
     width: 20%;
@@ -166,9 +163,9 @@ header{
     padding-top: 120px;
     justify-content: center;
     transition: all 0.6s;
-}
-
-.sidebar a {
+  }
+  
+  .sidebar a {
     padding: 10px 15px;
     text-decoration: none;
     font-size: 22px;
@@ -176,34 +173,39 @@ header{
     color: var(--hdtext-color);
     display: block;
     transition: 0.3s;
-    text-align: center; 
-}
-
-.sidebar a:hover {
+    text-align: center;
+  }
+  
+  .sidebar a:hover {
     transform: translateY(-4px);
     color: var(--second-color);
-}
-
-.sidebar .close-btn {
+  }
+  
+  .sidebar .close-btn {
     position: absolute;
     top: 0;
     left: 25px;
     font-size: 36px;
     margin-left: 50px;
-}
-
-.sidebar.active {
+  }
+  
+  .sidebar.active {
     right: 0;
-}
-
-
-@media(max-width: 1610px){
+  }
+  
+  @media(max-width: 1610px){
     header{
         padding: 15px 7%;
+    }
+    section{
+        padding: 100px 7% 80px;
     }
 }
 
 @media(max-width: 1500px){
+    section{
+        padding: 100px 4% 70px;
+    }
     :root{
         --h1-font: 4.8rem;
         --h2-font: 2.8rem;
@@ -211,13 +213,7 @@ header{
     }
 }
 
-@media(max-width: 1170px){
-    header{
-        padding: 10px 4%;
-    }
-}
-
-@media(max-width: 1050px){
+@media(max-width: 1440px){
     .navlist{
     position: absolute;
     width: 100%;
@@ -246,121 +242,146 @@ header{
     .logo{
         font-size: 25px;
     }
-}
-
-@media(max-width: 530px){
-    :root{
-        --h1-font: 3.5rem;
-        --h2-font: 2.2rem;
+    .search-input.active {
+        width: 250px; /* 需要的长度 */
+        opacity: 1;
     }
-    .nav-right a{
-        font-size: 7px;
+    .container{
+        margin: 120px auto 20px auto;
     }
 }
 
-.btn1{
+@media(max-width: 1170px){
+    header{
+        padding: 10px 4%;
+    }
+    section{
+        padding: 80px 4% 70px;
+    }
+}
+
+@media(max-width: 650px){
+    header{
+        padding: 10px 4%;
+    }
+    .search-input.active {
+        width: 150px; /* 需要的长度 */
+        opacity: 1;
+    }
+}
+  
+  .btn1 {
     background: transparent;
     border: none;
     outline: none;
     font-size: 20px;
     font-weight: 400;
     color: var(--second-color);
-}
-
-.btn1 :hover{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+  }
+  
+  .btn1 :hover {
     cursor: pointer;
-}
-
-
-
-
-/* introduction */
-.container {
+  }
+  
+  /* introduction */
+  .container {
     width: 85%;
     max-width: 2000px;
     margin: 150px auto 20px auto;
-    border: 1px solid #e4dcc4;
+    border: 1px solid #ccc;
     padding: 30px;
-    background-color: #d2c9ad;
+    background-color: #c3b9a2;
     border-radius: 30px;
     display: flex; /* 使用 Flexbox 佈局 */
     align-items: center; /* 垂直方向居中 */
-    opacity: 0.8; 
-}
-
-.store-photo {
-    width: 100px;
-    height: 100px;
-    float: left;
-    margin-right: 80px; /* 調整 margin */
+    position: relative;
+  }
+  
+  .store-photo {
+    width: 150px;
+    height: 150px;
+    margin-right: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.store-photo img {
-    width: 150%;
-    height: 150%;
+  }
+  
+  .store-photo img {
+    width: 100%;
+    height: 100%;
     object-fit: cover; /* 保持圖片比例並裁剪 */
     border-radius: 10%; /* 使照片變為圓形 */
-    margin-left: 50px;
-}
-
-.store-details {
-    display: flex;
-    flex-direction: column;
-}
-.store-details h2 {
-    font-weight: 700px;
-    margin: 0 0 10px 0; 
-}
-
-.detail-item {
-    font-weight: 500px;
+  }
+  
+  .store-details {
+    flex: 1;
+  }
+  
+  .store-details h2 {
+    margin: 0 0 10px 0;
+    font-size: 24px;
+    font-weight: 500;
+  }
+  
+  .detail-item {
     text-decoration: none;
     color: var(--text-color);
     margin-top: 10px;
     margin-bottom: 10px;
     display: flex;
     align-items: center;
-}
-
-.detail-item i{
+  }
+  
+  .detail-item i {
     margin-right: 8px;
-}
-
-.icon {
+  }
+  
+  .right-bottom-button {
+    position: absolute;
+    bottom: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: var(--second-color);
+    font-size: 24px;
+    cursor: pointer;
+  }
+  
+  .icon {
     margin-right: 10px;
-}
-
-.detail-text {
+  }
+  
+  .detail-text {
     text-align: left;
-}
-
-.comment-box {
+  }
+  
+  .comment-box {
     width: 89%;
     height: 4px;
-    background-color: rgb(93, 54, 28); 
+    background-color: rgb(93, 54, 28);
     margin: 10px auto; /* 與方塊間的間隔 */
-    opacity: 0.5; 
-}
-
-.review-container {
+    opacity: 0.5;
+  }
+  
+  .review-container {
     width: 85%;
     height: auto;
     margin: 20px auto; /* 與上方的橫條間距 */
     border: 1px solid #ccc;
     padding: 40px;
-    background-color: rgb(202,188,169);
+    background-color: rgb(215, 198, 177);
     border-radius: 30px;
     position: relative; /* 增加相對定位 */
-}
-
-.review-wrapper {
-    position: relative; 
-}
-
-.review-container textarea {
+  }
+  
+  .review-wrapper {
+    position: relative;
+  }
+  
+  .review-container textarea {
     width: 100%;
     border: none;
     padding: 1px;
@@ -368,49 +389,49 @@ header{
     resize: none; /* 禁用手動調整大小 */
     background: transparent;
     box-sizing: border-box; /* 確保寬度包括內填充 */
-}
-
-.review-container textarea:focus {
+  }
+  
+  .review-container textarea:focus {
     outline: none; /* 去掉點擊時的外框 */
-}
-
-.placeholder {
+  }
+  
+  .placeholder {
     font-size: 16px;
     padding: 10px;
-    color: var(--text-color);
+    color: rgb(85, 45, 31);
     position: absolute;
     top: 0;
     left: 0;
-    pointer-events: none; /* 使其不可點擊 */    
-}
-
-textarea::placeholder {
-    color: var(--text-color);
+    pointer-events: none; /* 使其不可點擊 */
+  }
+  
+  textarea::placeholder {
+    color: rgb(85, 45, 31);
     font-size: 16px;
-}
-textarea:focus {
+  }
+  textarea:focus {
     outline: none; /* 去掉点击时的外框 */
-}
-.buttons {
+  }
+  .buttons {
     display: flex;
     justify-content: flex-end; /* 將按鈕移到右下角 */
     margin-top: 10px;
-}
-
-.button {
+  }
+  
+  .button {
     padding: 8px 16px;
     margin-left: 10px;
-    background-color: rgb(85, 45, 31);
+    background-color: rgb(137, 101, 88);
     color: white;
     border: none;
     border-radius: 20px;
     cursor: pointer;
-}
-.button:hover {
-    background-color: rgb(60,30,20);
-}
-
-.comments-container {
+  }
+  .button:hover {
+    background-color: rgb(60, 30, 20);
+  }
+  
+  .comments-container {
     background-color: white;
     width: 85%;
     margin: 50px auto;
@@ -420,39 +441,34 @@ textarea:focus {
     display: flex;
     flex-direction: column;
     gap: 20px;
-}
-
-.comments-header {
+  }
+  
+  .comments-header {
     display: flex;
     justify-content: space-between;
     padding-bottom: 10px;
     border-bottom: 1px solid #ccc;
     margin-bottom: 10px;
-}
-
-.comments-header .title {
+  }
+  
+  .comments-header .title {
     font-size: 18px;
     font-weight: bold;
-}
-
-.comment {
+  }
+  
+  .comment {
     display: flex;
     justify-content: space-between;
     padding: 10px;
     border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.comment .text {
+  }
+  
+  .comment .text {
     flex: 1;
-}
-
-.comment .year {
+  }
+  
+  .comment .year {
     margin-left: 20px;
     color: rgb(85, 45, 31);
-}
-
-.modal-header .modal-title {
-    display: flex;
-    align-items: center;
-}
+  }

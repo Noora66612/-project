@@ -196,7 +196,7 @@ header{
 }
 
 .recs{
-    padding: 120px 5% 30px;
+    padding: 150px 5% 30px;
 }
 .n-restaurants{
     padding: 60px 7% 80px;
@@ -351,6 +351,9 @@ header{
     }
     .logo{
         font-size: 25px;
+    }
+    .recs{
+        padding: 120px 5% 30px;
     }
     .search-input.active {
         width: 250px; /* 需要的长度 */

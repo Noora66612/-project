@@ -26,54 +26,129 @@ document.addEventListener("scroll", function(event) {
     }
 });
 
-var btns = document.querySelectorAll(".btn1");
-btns.forEach(function(btn) {
-    btn.addEventListener("click", function() {
-        var computedStyle = window.getComputedStyle(btn);
-        var color = computedStyle.getPropertyValue("color");
-
-        if (color === "rgb(214, 76, 76)") {  // Red
-            btn.closest(".row").remove();  // Remove the entire row
-        } else {
-            btn.style.color = "#D64C4C";  // Red
-        }
-    });
-});
-
-function addToFavorites(storeId) {
-    // Implement adding store to favorites (using localStorage or server-side storage)
-    // Update UI to reflect the change
-}
-
 document.addEventListener("DOMContentLoaded", function() {
-    sortFavorites();
+    // 替換為實際用戶帳號
+    const account = 'example_account'; 
+
+    // 初始化按鈕
+    initializeFavoriteButtons(account);
+
+    // 加載收藏
+    loadFavorites(account);
+
+    // 綁定排序功能
+    document.getElementById("sort-select").addEventListener("change", function() {
+        loadFavorites(account);
+    });
 });
 
-function sortFavorites() {
-    var select = document.getElementById("sort-select");
-    var sortingOrder = select.value;
-    var container = document.querySelector(".n-content");
-    var items = Array.from(container.getElementsByClassName("row"));
-
-    items.sort(function(a, b) {
-        var dateA = new Date(a.getAttribute("data-timestamp"));
-        var dateB = new Date(b.getAttribute("data-timestamp"));
-
-        if (sortingOrder === "oldesttonewest") {
-            return dateA - dateB;
-        } else if (sortingOrder === "newesttooldest") {
-            return dateB - dateA;
-        }
-    });
-
-    // Clear the container and append the sorted items
-    container.innerHTML = "";
-    items.forEach(function(item) {
-        container.appendChild(item);
+function initializeFavoriteButtons(account) {
+    document.querySelectorAll(".btn1").forEach(button => {
+        button.addEventListener("click", function() {
+            const id = button.getAttribute('data-id');
+            const name = button.getAttribute('data-name');
+            const img = button.getAttribute('data-img');
+            const hours = button.getAttribute('data-hours');
+            toggleFavorite(id, name, img, hours, account);
+        });
     });
 }
 
-container.innerHTML = "";
-items.forEach(function(item) {
-    container.appendChild(item);
+function loadFavorites(account) {
+    fetchFavorites(account).then(favorites => renderFavorites(favorites));
+}
+
+function fetchFavorites(account) {
+    return fetch(`favorites.php?account=${account}`)
+        .then(response => response.json())
+        .catch(error => {
+            console.error('Error:', error);
+            return [];
+        });
+}
+
+function toggleFavorite(id, name, img, hours, account) {
+    const action = isFavorite(id) ? 'remove' : 'add';
+    
+    fetch('favorites.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: new URLSearchParams({
+            action: action,
+            account: account,
+            restaurant_id: id,
+            name: name,
+            img: img,
+            hours: hours,
+        })
+    })
+    .then(response => loadFavorites(account))
+    .catch(error => console.error('Error:', error));
+}
+
+function isFavorite(id) {
+    const favorites = getFavorites();
+    return favorites.some(fav => fav.restaurant_id === id);
+}
+
+function getFavorites() {
+    // Implement this function to get current favorites from your backend or local storage
+    // For example, you could fetch from your API or retrieve from local storage
+    return []; // Placeholder implementation
+}
+
+function renderFavorites(favorites) {
+    const container = document.querySelector('.n-content');
+    container.innerHTML = '';
+
+    const sortOrder = document.getElementById('sort-select').value;
+    favorites.sort((a, b) => sortOrder === 'newesttooldest' ? new Date(b.timestamp) - new Date(a.timestamp) : new Date(a.timestamp) - new Date(b.timestamp));
+
+    favorites.forEach(item => {
+        const row = document.createElement('div');
+        row.className = 'row';
+        row.setAttribute('data-timestamp', item.timestamp);
+        row.innerHTML = `
+            <div class="row-img">
+                <img src="${item.img}" alt="${item.name}">
+            </div>
+            <div class="row-content">
+                <a href="#">${item.name}</a>
+                <div class="opening-hour"> 
+                    <i class="ri-time-line"></i>
+                    營業時間：${item.hours}
+                </div>
+            </div>
+            <div class="row-in">
+                <div class="row-left">
+                    <div class="phonenum">
+                        <i class="ri-phone-line"></i>
+                        電話：
+                    </div>
+                </div>
+                <div class="row-right">
+                    <Button onclick="toggleFavorite(${item.restaurant_id}, '${item.name}', '${item.img}', '${item.hours}', '${item.account}')" class="btn1"><i class="ri-heart-fill"></i></Button>
+                </div>
+            </div>
+        `;
+        container.appendChild(row);
+    });
+}
+
+const searchInput = document.querySelector('.search-input');
+const searchForm = document.querySelector('.search-form'); // Assuming the search form element
+
+// Toggle search box visibility on search button click
+document.querySelector('.search-btn').addEventListener('mousedown', function(event) {
+  event.preventDefault(); // Prevent default behavior
+  searchInput.classList.toggle('active');
+});
+
+// Close search box on click outside the search form
+document.addEventListener('click', function(event) {
+  if (!searchForm.contains(event.target) && searchInput.classList.contains('active')) {
+    searchInput.classList.remove('active');
+  }
 });

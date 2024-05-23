@@ -104,7 +104,7 @@
                      echo '            </div>';
                      echo '        </div>';
                      echo '        <div class="row-right">';
-                     echo '            <Button onclick="Toggle(this)" class="btn1"><i class="ri-heart-fill"></i></Button>';
+                     echo '            <Button onclick="Toggle(this)" class="btn1" data-id="' .$row["編號"].'"data-name="'. $row["餐廳名"] .'" data-img="img/' . $row["餐廳名"] . '.jpg" data-hours="' . $row["營業時間"].'"><i class="ri-heart-fill"></i></button>';
                      echo '        </div>';
                      echo '    </div>';
                      echo '</div>';
@@ -123,6 +123,7 @@
 
     <!--- custom js link --->
     <script src="home.js"></script>
+    <script src="myfavfix.js"></script>
 </body>
 </html>
 
