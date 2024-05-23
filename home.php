@@ -80,7 +80,7 @@
  <!--- 每日推薦 --->
         <section class="n-restaurants">
         <div class="center-text" style="margin-top: 35px;">
-            <h3>每日推薦</h3>
+        <h3><i class="ri-lightbulb-line" style="margin-right: 5px;"></i>每日推薦</h3>
         </div> 
         <div class="n-content">
             <?php
@@ -98,7 +98,7 @@
             }
 
             // 从数据库中選8個餐廳在每日推薦中呈現
-            $sql = "SELECT * FROM 名單 ORDER BY RAND() LIMIT 8";
+            $sql = "SELECT * FROM 名單 ORDER BY RAND() LIMIT 3";
             $result = mysqli_query($conn, $sql);
 
             if (mysqli_num_rows($result) > 0) {
@@ -143,7 +143,7 @@
       <!--- 所有餐廳 --->
       <section class="n-restaurants">
         <div class="center-text">
-            <h3>所有餐廳</h3>
+        <h3><i class="ri-restaurant-line" style="margin-right: 10px;"></i>所有餐廳</h3>
         </div> 
         <div class="n-content">
             <?php
@@ -208,7 +208,7 @@
     <!--- 後門餐廳 --->
     <section class="n-restaurants">
         <div class="center-text">
-            <h3>後門餐廳</h3>
+        <h3><i class="ri-restaurant-line" style="margin-right: 10px;"></i>後門餐廳</h3>
         </div> 
         <div class="n-content">
             <?php
@@ -274,7 +274,7 @@
     <!--- 宵夜街餐廳 --->
     <section class="n-restaurants">
         <div class="center-text">
-            <h3>宵夜街餐廳</h3>
+        <h3><i class="ri-restaurant-line" style="margin-right: 10px;"></i>宵夜街餐廳</h3>
         </div> 
         <div class="n-content">
             <?php
@@ -340,7 +340,7 @@
     <!--- 學餐餐廳 --->
     <section class="n-restaurants">
         <div class="center-text">
-            <h3>學餐餐廳</h3>
+        <h3><i class="ri-restaurant-line" style="margin-right: 10px;"></i>學餐</h3>
         </div> 
         <div class="n-content">
             <?php
