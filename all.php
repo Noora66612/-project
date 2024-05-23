@@ -67,11 +67,11 @@
     <!--- sidebar --->
     <div id="mySidebar" class="sidebar">
         <a href="javascript:void(0)" class="close-btn" id="close-btn">&times;</a>
-        <a href="home.php">首頁</a>
+        <a href=home.php>首頁</a>
         <a href=all.php>所有餐廳</a>
         <a href=school.php>學餐</a>
-        <a href="backdoor.php">後門</a>
-        <a href="street.php">宵夜街</a>
+        <a href=backdoor.php>後門</a>
+        <a href=street.php>宵夜街</a>
         <a href="#">聯絡我們</a>
     </div>
 
@@ -79,7 +79,7 @@
     <!--- 所有餐廳 --->
     <section class="n-restaurants">
         <div class="center-text">
-            <h3>所有餐廳</h3>
+        <h3><i class="ri-restaurant-line" style="margin-right: 10px;"></i>所有餐廳</h3>
         </div> 
         <div class="n-content">
             <?php

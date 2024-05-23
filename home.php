@@ -105,7 +105,7 @@
                 while($row = mysqli_fetch_assoc($result)) {
                     echo '<div class="row">';
                     echo '    <div class="row-img">';
-                    echo '        <a href="introduction.html"><img src="img/' . $row["餐廳名"] . '.jpg" alt="' . $row["餐廳名"] . '"></a>';
+                    echo '        <a href="introduction.html"><img src="img/' . $row["圖片"] .'" alt="' . $row["餐廳名"] . '"></a>';
                     echo '    </div>';
                     echo '    <div class="row-content">';
                     echo '        <a href="introduction.html">' . $row["餐廳名"] . '</a>';
@@ -168,7 +168,7 @@
                 while($row = mysqli_fetch_assoc($result)) {
                     echo '<div class="row">';
                     echo '    <div class="row-img">';
-                    echo '        <a href="introduction.html"><img src="img/' . $row["餐廳名"] . '.jpg" alt="' . $row["餐廳名"] . '"></a>';
+                    echo '        <a href="introduction.html"><img src="img/' . $row["圖片"] .'" alt="' . $row["餐廳名"] . '"></a>';
                     echo '    </div>';
                     echo '    <div class="row-content">';
                     echo '        <a href="introduction.html">' . $row["餐廳名"] . '</a>';
@@ -233,7 +233,7 @@
                 while($row = mysqli_fetch_assoc($result)) {
                     echo '<div class="row">';
                     echo '    <div class="row-img">';
-                    echo '        <a href="introduction.html"><img src="img/' . $row["餐廳名"] . '.jpg" alt="' . $row["餐廳名"] . '"></a>';
+                    echo '       <a href="introduction.html"><img src="img/' . $row["圖片"] .'" alt="' . $row["餐廳名"] . '"></a>';
                     echo '    </div>';
                     echo '    <div class="row-content">';
                     echo '        <a href="introduction.html">' . $row["餐廳名"] . '</a>';
@@ -299,7 +299,7 @@
                 while($row = mysqli_fetch_assoc($result)) {
                     echo '<div class="row">';
                     echo '    <div class="row-img">';
-                    echo '        <a href="introduction.html"><img src="img/' . $row["餐廳名"] . '.jpg" alt="' . $row["餐廳名"] . '"></a>';
+                    echo '        <a href="introduction.html"><img src="img/' . $row["圖片"] .'" alt="' . $row["餐廳名"] . '"></a>';
                     echo '    </div>';
                     echo '    <div class="row-content">';
                     echo '        <a href="introduction.html">' . $row["餐廳名"] . '</a>';
@@ -365,7 +365,7 @@
                 while($row = mysqli_fetch_assoc($result)) {
                     echo '<div class="row">';
                     echo '    <div class="row-img">';
-                    echo '        <a href="introduction.html"><img src="img/' . $row["餐廳名"] . '.jpg" alt="' . $row["餐廳名"] . '"></a>';
+                    echo '       <a href="introduction.html"><img src="img/' . $row["圖片"] .'" alt="' . $row["餐廳名"] . '"></a>';
                     echo '    </div>';
                     echo '    <div class="row-content">';
                     echo '        <a href="introduction.html">' . $row["餐廳名"] . '</a>';
