@@ -122,7 +122,7 @@
                     echo '            </div>';
                     echo '        </div>';
                     echo '        <div class="row-right">';
-                    echo '            <Button onclick="Toggle(this)" class="btn1"><i class="ri-heart-fill"></i></Button>';
+                    echo '            <Button onclick="Toggle(this)" class="btn1" data-id="' .$row["編號"].'"data-name="'. $row["餐廳名"] .'" data-img="img/' . $row["餐廳名"] . '.jpg" data-hours="' . $row["營業時間"].'"><i class="ri-heart-fill"></i></button>';
                     echo '        </div>';
                     echo '    </div>';
                     echo '</div>';
@@ -181,7 +181,7 @@
                     echo '            </div>';
                     echo '        </div>';
                     echo '        <div class="row-right">';
-                    echo '            <Button onclick="Toggle(this)" class="btn1"><i class="ri-heart-fill"></i></Button>';
+                    echo '            <Button onclick="Toggle(this)" class="btn1" data-id="' .$row["編號"].'"data-name="'. $row["餐廳名"] .'" data-img="img/' . $row["餐廳名"] . '.jpg" data-hours="' . $row["營業時間"].'"><i class="ri-heart-fill"></i></button>';
                     echo '        </div>';
                     echo '    </div>';
                     echo '</div>';
@@ -243,7 +243,7 @@
                     echo '            </div>';
                     echo '        </div>';
                     echo '        <div class="row-right">';
-                    echo '            <Button onclick="Toggle(this)" class="btn1"><i class="ri-heart-fill"></i></Button>';
+                    echo '            <Button onclick="Toggle(this)" class="btn1" data-id="' .$row["編號"].'"data-name="'. $row["餐廳名"] .'" data-img="img/' . $row["餐廳名"] . '.jpg" data-hours="' . $row["營業時間"].'"><i class="ri-heart-fill"></i></button>';
                     echo '        </div>';
                     echo '    </div>';
                     echo '</div>';
@@ -305,7 +305,7 @@
                     echo '            </div>';
                     echo '        </div>';
                     echo '        <div class="row-right">';
-                    echo '            <Button onclick="Toggle(this)" class="btn1"><i class="ri-heart-fill"></i></Button>';
+                    echo '            <Button onclick="Toggle(this)" class="btn1" data-id="' .$row["編號"].'"data-name="'. $row["餐廳名"] .'" data-img="img/' . $row["餐廳名"] . '.jpg" data-hours="' . $row["營業時間"].'"><i class="ri-heart-fill"></i></button>';
                     echo '        </div>';
                     echo '    </div>';
                     echo '</div>';
@@ -367,7 +367,7 @@
                     echo '            </div>';
                     echo '        </div>';
                     echo '        <div class="row-right">';
-                    echo '            <Button onclick="Toggle(this)" class="btn1"><i class="ri-heart-fill"></i></Button>';
+                    echo '            <Button onclick="Toggle(this)" class="btn1" data-id="' .$row["編號"].'"data-name="'. $row["餐廳名"] .'" data-img="img/' . $row["餐廳名"] . '.jpg" data-hours="' . $row["營業時間"].'"><i class="ri-heart-fill"></i></button>';
                     echo '        </div>';
                     echo '    </div>';
                     echo '</div>';
@@ -388,6 +388,6 @@
     integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" 
     crossorigin="anonymous"></script>
     <script src="home.js"></script>
-
+    <script src="myfavfix.js"></script>
 </body>
 </html>
