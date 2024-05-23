@@ -7,32 +7,42 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" 
+    crossorigin="anonymous"></script>
     <title>央央熊食在</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="home.css">
+
     <!-- box-icon link -->
-    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" 
+     href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+
     <!-- remix-icons link -->
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+    rel="stylesheet"/>
+    
     <!-- google fonts link -->
+
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    
 </head>
 <body>
     <!--- header --->
     <header>
-        <a href="home.html" class="logo">央央熊食在</a>
+        <a href="home.php" class="logo">央央熊食在</a>
         <ul class="navlist">
             <li class="nav-item">
-                <a href="home.html" class="nav-link">首頁</a>
+                <a href="home.php" class="nav-link">首頁</a>
             </li>
             <li class="nav-item">
-                <a href="all.html" class="nav-link">所有餐廳</a>
+                <a href="all.php" class="nav-link">所有餐廳</a>
             </li>
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">用餐地點</a>
                 <ul class="dropdown-menu">
-                    <li><a href="school.html" class="dropdown-item">學餐</a></li>
-                    <li><a href="backdoor.html" class="dropdown-item">後門</a></li>
-                    <li><a href="street.html" class="dropdown-item">宵夜街</a></li>
+                    <li><a href="school.php" class="dropdown-item">學餐</a></li>
+                    <li><a href="backdoor.php" class="dropdown-item">後門</a></li>
+                    <li><a href="street.php" class="dropdown-item">宵夜街</a></li>
                 </ul>
             </li>
         </ul> 
@@ -51,11 +61,11 @@
     <!--- sidebar --->
     <div id="mySidebar" class="sidebar">
         <a href="javascript:void(0)" class="close-btn" id="close-btn">&times;</a>
-        <a href="home.html">首頁</a>
-        <a href="all.html">所有餐廳</a>
-        <a href="school.html">學餐</a>
-        <a href="backdoor.html">後門</a>
-        <a href="street.html">宵夜街</a>
+        <a href="home.php">首頁</a>
+        <a href="all.php">所有餐廳</a>
+        <a href="school.php">學餐</a>
+        <a href="backdoor.php">後門</a>
+        <a href="street.php">宵夜街</a>
         <a href="#">聯絡我們</a>
     </div>
 
@@ -79,39 +89,43 @@
                 die("连接失败: " . mysqli_connect_error());
             }
 
-             // 从数据库中获取所有餐厅数据
-             $sql = "SELECT 編號, 餐廳名, 地址, 營業時間, 電話 FROM 名單";
-             $result = mysqli_query($conn, $sql);
+            // 从数据库中获取所有餐厅数据
+            $sql = "SELECT 編號, 餐廳名, 地址, 營業時間, 公休日, 電話 FROM 名單";
+            $result = mysqli_query($conn, $sql);
  
-             if (mysqli_num_rows($result) > 0) {
-                 while($row = mysqli_fetch_assoc($result)) {
-                     echo '<div class="row">';
-                     echo '    <div class="row-img">';
-                     echo '        <img src="img/' . $row["餐廳名"] . '.jpg" alt="' . $row["餐廳名"] . '">';
-                     echo '    </div>';
-                     echo '    <div class="row-content">';
-                     echo '        <a href="#">' . $row["餐廳名"] . '</a>';
-                     echo '        <div class="opening-hour">';
-                     echo '            <i class="ri-time-line"></i>';
-                     echo '            營業時間：' . $row["營業時間"];
-                     echo '        </div>';
-                     echo '    </div>';
-                     echo '    <div class="row-in">';
-                     echo '        <div class="row-left">';
-                     echo '            <div class="phonenum">';
-                     echo '                <i class="ri-phone-line"></i>';
-                     echo '                電話：' . $row["電話"];
-                     echo '            </div>';
-                     echo '        </div>';
-                     echo '        <div class="row-right">';
-                     echo '            <Button onclick="Toggle(this)" class="btn1" data-id="' .$row["編號"].'"data-name="'. $row["餐廳名"] .'" data-img="img/' . $row["餐廳名"] . '.jpg" data-hours="' . $row["營業時間"].'"><i class="ri-heart-fill"></i></button>';
-                     echo '        </div>';
-                     echo '    </div>';
-                     echo '</div>';
-                 }
-             } else {
-                 echo "沒有餐廳數據";
-             }
+            if (mysqli_num_rows($result) > 0) {
+                while($row = mysqli_fetch_assoc($result)) {
+                    echo '<div class="row">';
+                    echo '    <div class="row-img">';
+                    echo '        <a href="introduction.html"><img src="img/' . $row["餐廳名"] . '.jpg" alt="' . $row["餐廳名"] . '"></a>';
+                    echo '    </div>';
+                    echo '    <div class="row-content">';
+                    echo '        <a href="introduction.html">' . $row["餐廳名"] . '</a>';
+                    echo '        <div class="opening-hour">';
+                    echo '            <i class="ri-time-line"></i>';
+                    echo '            營業時間：<br>' . $row["營業時間"];
+                    echo '        </div>';
+                    echo '        <div class="closeday">';
+                    echo '            <i class="ri-calendar-close-line"></i>';
+                    echo '            公休日：' . $row["公休日"];
+                    echo '        </div>';
+                    echo '    </div>';
+                    echo '    <div class="row-in">';
+                    echo '        <div class="row-left">';
+                    echo '            <div class="phonenum">';
+                    echo '                <i class="ri-phone-line"></i>';
+                    echo '                電話：' . $row["電話"];
+                    echo '            </div>';
+                    echo '        </div>';
+                    echo '        <div class="row-right">';
+                    echo '            <Button onclick="Toggle(this)" class="btn1" data-id="' .$row["編號"].'" data-name="'. $row["餐廳名"] .'" data-img="img/' . $row["餐廳名"] . '.jpg" data-hours="' . $row["營業時間"].'"><i class="ri-heart-fill"></i></Button>';
+                    echo '        </div>';
+                    echo '    </div>';
+                    echo '</div>';
+                }
+            } else {
+                echo "沒有餐廳數據";
+            }
             mysqli_close($conn);
             ?>
         </div>
@@ -121,9 +135,11 @@
         <a href="#" class="btn">查看所有</a>
     </div>
 
-    <!--- custom js link --->
+     <!--- custom js link --->
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" 
+    crossorigin="anonymous"></script>
     <script src="home.js"></script>
     <script src="myfavfix.js"></script>
 </body>
 </html>
-

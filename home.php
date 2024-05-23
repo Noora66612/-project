@@ -105,13 +105,17 @@
                 while($row = mysqli_fetch_assoc($result)) {
                     echo '<div class="row">';
                     echo '    <div class="row-img">';
-                    echo '        <img src="img/' . $row["餐廳名"] . '.jpg" alt="' . $row["餐廳名"] . '">';
+                    echo '        <a href="introduction.html"><img src="img/' . $row["餐廳名"] . '.jpg" alt="' . $row["餐廳名"] . '"></a>';
                     echo '    </div>';
                     echo '    <div class="row-content">';
-                    echo '        <a href="#">' . $row["餐廳名"] . '</a>';
+                    echo '        <a href="introduction.html">' . $row["餐廳名"] . '</a>';
                     echo '        <div class="opening-hour">';
                     echo '            <i class="ri-time-line"></i>';
-                    echo '            營業時間：' . $row["營業時間"];
+                    echo '            營業時間：<br>' . $row["營業時間"];
+                    echo '        </div>';
+                    echo '        <div class="closeday">';
+                    echo '            <i class="ri-calendar-close-line"></i>';
+                    echo '            公休日：' . $row["公休日"];
                     echo '        </div>';
                     echo '    </div>';
                     echo '    <div class="row-in">';
@@ -122,7 +126,7 @@
                     echo '            </div>';
                     echo '        </div>';
                     echo '        <div class="row-right">';
-                    echo '            <Button onclick="Toggle(this)" class="btn1" data-id="' .$row["編號"].'"data-name="'. $row["餐廳名"] .'" data-img="img/' . $row["餐廳名"] . '.jpg" data-hours="' . $row["營業時間"].'"><i class="ri-heart-fill"></i></button>';
+                    echo '            <Button onclick="Toggle(this)" class="btn1" data-id="' .$row["編號"].'" data-name="'. $row["餐廳名"] .'" data-img="img/' . $row["餐廳名"] . '.jpg" data-hours="' . $row["營業時間"].'"><i class="ri-heart-fill"></i></Button>';
                     echo '        </div>';
                     echo '    </div>';
                     echo '</div>';
@@ -164,13 +168,17 @@
                 while($row = mysqli_fetch_assoc($result)) {
                     echo '<div class="row">';
                     echo '    <div class="row-img">';
-                    echo '        <img src="img/' . $row["餐廳名"] . '.jpg" alt="' . $row["餐廳名"] . '">';
+                    echo '        <a href="introduction.html"><img src="img/' . $row["餐廳名"] . '.jpg" alt="' . $row["餐廳名"] . '"></a>';
                     echo '    </div>';
                     echo '    <div class="row-content">';
-                    echo '        <a href="#">' . $row["餐廳名"] . '</a>';
+                    echo '        <a href="introduction.html">' . $row["餐廳名"] . '</a>';
                     echo '        <div class="opening-hour">';
                     echo '            <i class="ri-time-line"></i>';
-                    echo '            營業時間：' . $row["營業時間"];
+                    echo '            營業時間：<br>' . $row["營業時間"];
+                    echo '        </div>';
+                    echo '        <div class="closeday">';
+                    echo '            <i class="ri-calendar-close-line"></i>';
+                    echo '            公休日：' . $row["公休日"];
                     echo '        </div>';
                     echo '    </div>';
                     echo '    <div class="row-in">';
@@ -181,7 +189,7 @@
                     echo '            </div>';
                     echo '        </div>';
                     echo '        <div class="row-right">';
-                    echo '            <Button onclick="Toggle(this)" class="btn1" data-id="' .$row["編號"].'"data-name="'. $row["餐廳名"] .'" data-img="img/' . $row["餐廳名"] . '.jpg" data-hours="' . $row["營業時間"].'"><i class="ri-heart-fill"></i></button>';
+                    echo '            <Button onclick="Toggle(this)" class="btn1" data-id="' .$row["編號"].'" data-name="'. $row["餐廳名"] .'" data-img="img/' . $row["餐廳名"] . '.jpg" data-hours="' . $row["營業時間"].'"><i class="ri-heart-fill"></i></Button>';
                     echo '        </div>';
                     echo '    </div>';
                     echo '</div>';
@@ -189,7 +197,6 @@
             } else {
                 echo "沒有餐廳數據";
             }
-
             mysqli_close($conn);
             ?>
         </div>
@@ -226,13 +233,17 @@
                 while($row = mysqli_fetch_assoc($result)) {
                     echo '<div class="row">';
                     echo '    <div class="row-img">';
-                    echo '        <img src="img/' . $row["餐廳名"] . '.jpg" alt="' . $row["餐廳名"] . '">';
+                    echo '        <a href="introduction.html"><img src="img/' . $row["餐廳名"] . '.jpg" alt="' . $row["餐廳名"] . '"></a>';
                     echo '    </div>';
                     echo '    <div class="row-content">';
-                    echo '        <a href="#">' . $row["餐廳名"] . '</a>';
+                    echo '        <a href="introduction.html">' . $row["餐廳名"] . '</a>';
                     echo '        <div class="opening-hour">';
                     echo '            <i class="ri-time-line"></i>';
-                    echo '            營業時間：' . $row["營業時間"];
+                    echo '            營業時間：<br>' . $row["營業時間"];
+                    echo '        </div>';
+                    echo '        <div class="closeday">';
+                    echo '            <i class="ri-calendar-close-line"></i>';
+                    echo '            公休日：' . $row["公休日"];
                     echo '        </div>';
                     echo '    </div>';
                     echo '    <div class="row-in">';
@@ -243,7 +254,7 @@
                     echo '            </div>';
                     echo '        </div>';
                     echo '        <div class="row-right">';
-                    echo '            <Button onclick="Toggle(this)" class="btn1" data-id="' .$row["編號"].'"data-name="'. $row["餐廳名"] .'" data-img="img/' . $row["餐廳名"] . '.jpg" data-hours="' . $row["營業時間"].'"><i class="ri-heart-fill"></i></button>';
+                    echo '            <Button onclick="Toggle(this)" class="btn1" data-id="' .$row["編號"].'" data-name="'. $row["餐廳名"] .'" data-img="img/' . $row["餐廳名"] . '.jpg" data-hours="' . $row["營業時間"].'"><i class="ri-heart-fill"></i></Button>';
                     echo '        </div>';
                     echo '    </div>';
                     echo '</div>';
@@ -288,13 +299,17 @@
                 while($row = mysqli_fetch_assoc($result)) {
                     echo '<div class="row">';
                     echo '    <div class="row-img">';
-                    echo '        <img src="img/' . $row["餐廳名"] . '.jpg" alt="' . $row["餐廳名"] . '">';
+                    echo '        <a href="introduction.html"><img src="img/' . $row["餐廳名"] . '.jpg" alt="' . $row["餐廳名"] . '"></a>';
                     echo '    </div>';
                     echo '    <div class="row-content">';
-                    echo '        <a href="#">' . $row["餐廳名"] . '</a>';
+                    echo '        <a href="introduction.html">' . $row["餐廳名"] . '</a>';
                     echo '        <div class="opening-hour">';
                     echo '            <i class="ri-time-line"></i>';
-                    echo '            營業時間：' . $row["營業時間"];
+                    echo '            營業時間：<br>' . $row["營業時間"];
+                    echo '        </div>';
+                    echo '        <div class="closeday">';
+                    echo '            <i class="ri-calendar-close-line"></i>';
+                    echo '            公休日：' . $row["公休日"];
                     echo '        </div>';
                     echo '    </div>';
                     echo '    <div class="row-in">';
@@ -305,7 +320,7 @@
                     echo '            </div>';
                     echo '        </div>';
                     echo '        <div class="row-right">';
-                    echo '            <Button onclick="Toggle(this)" class="btn1" data-id="' .$row["編號"].'"data-name="'. $row["餐廳名"] .'" data-img="img/' . $row["餐廳名"] . '.jpg" data-hours="' . $row["營業時間"].'"><i class="ri-heart-fill"></i></button>';
+                    echo '            <Button onclick="Toggle(this)" class="btn1" data-id="' .$row["編號"].'" data-name="'. $row["餐廳名"] .'" data-img="img/' . $row["餐廳名"] . '.jpg" data-hours="' . $row["營業時間"].'"><i class="ri-heart-fill"></i></Button>';
                     echo '        </div>';
                     echo '    </div>';
                     echo '</div>';
@@ -350,13 +365,17 @@
                 while($row = mysqli_fetch_assoc($result)) {
                     echo '<div class="row">';
                     echo '    <div class="row-img">';
-                    echo '        <img src="img/' . $row["餐廳名"] . '.jpg" alt="' . $row["餐廳名"] . '">';
+                    echo '        <a href="introduction.html"><img src="img/' . $row["餐廳名"] . '.jpg" alt="' . $row["餐廳名"] . '"></a>';
                     echo '    </div>';
                     echo '    <div class="row-content">';
-                    echo '        <a href="#">' . $row["餐廳名"] . '</a>';
+                    echo '        <a href="introduction.html">' . $row["餐廳名"] . '</a>';
                     echo '        <div class="opening-hour">';
                     echo '            <i class="ri-time-line"></i>';
-                    echo '            營業時間：' . $row["營業時間"];
+                    echo '            營業時間：<br>' . $row["營業時間"];
+                    echo '        </div>';
+                    echo '        <div class="closeday">';
+                    echo '            <i class="ri-calendar-close-line"></i>';
+                    echo '            公休日：' . $row["公休日"];
                     echo '        </div>';
                     echo '    </div>';
                     echo '    <div class="row-in">';
@@ -367,7 +386,7 @@
                     echo '            </div>';
                     echo '        </div>';
                     echo '        <div class="row-right">';
-                    echo '            <Button onclick="Toggle(this)" class="btn1" data-id="' .$row["編號"].'"data-name="'. $row["餐廳名"] .'" data-img="img/' . $row["餐廳名"] . '.jpg" data-hours="' . $row["營業時間"].'"><i class="ri-heart-fill"></i></button>';
+                    echo '            <Button onclick="Toggle(this)" class="btn1" data-id="' .$row["編號"].'" data-name="'. $row["餐廳名"] .'" data-img="img/' . $row["餐廳名"] . '.jpg" data-hours="' . $row["營業時間"].'"><i class="ri-heart-fill"></i></Button>';
                     echo '        </div>';
                     echo '    </div>';
                     echo '</div>';
