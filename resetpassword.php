@@ -1,32 +1,31 @@
 <?php
+session_start();
+if (isset($_SESSION["user"])) {
+    header("Location: home.php");
+ }
+
 if($_SERVER["REQUEST_METHOD"] == "POST"){
-    $servername = "localhost";
-    $username = "jennifer";
-    $password = "jennifer0216";
-    $dbname = "user";
 
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
-    if ($conn->connect_error){
-        die("連接資料庫失敗： ". $conn->connect_error);
-    }
-
-    $gmail = $conn->real_escape_string($_POST['gmail']);
+    $gmail = $_POST['gmail'];
     $new_password = $_POST['password'];
 
+    require_once "user_database.php";
+
     if(strlen($new_password) <= 5 || !preg_match("/^(?=.*[A-Za-z])(?=.*\d)/", $new_password)){
-        echo "<script>showModal('密碼重設失敗', false);</script>";
+        echo "<script>showModal('密碼必須包含至少一個英文字母和一個數字，長度超過5。', false);</script>";
+        exit();
+    } 
+
+    $hashedPassword = password_hash($new_password, PASSWORD_BCRYPT);
+
+    $sql = "UPDATE member SET hashed_password = ? WHERE gmail = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("ss", $hashed_password, $gmail);
+
+    if ($stmt->execute()) {
+        echo "<script>showModal('密碼重設成功。', true);</script>";
     } else {
-        $stmt = $conn->prepare("UPDATE member SET hashed_password = ? WHERE gmail = ?");
-        $stmt->bind_param("ss", $hashedPassword, $gmail);
-
-        $hashedPassword = password_hash($new_password, PASSWORD_BCRYPT);
-
-        if($stmt->execute() === TRUE){
-            echo "<script>showModal('密碼重設成功。', true);</script>";
-        } else {
-            echo "<script>showModal('密碼重設失敗： " . $conn->error . "', false);</script>";
-        }
+        echo "<script>showModal('密碼重設失敗：" . $conn->error . "', false);</script>";
     }
 
     $stmt->close();
