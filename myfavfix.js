@@ -93,12 +93,20 @@ function isFavorite(id) {
     return favorites.some(fav => fav.restaurant_id === id);
 }
 
-function getFavorites() {
-    // Implement this function to get current favorites from your backend or local storage
-    // For example, you could fetch from your API or retrieve from local storage
-    return []; // Placeholder implementation
+function getFavorites(account) {
+    // 發送請求獲取收藏列表
+    fetch(`favorites.php?account=${account}`)
+        .then(response => response.json())
+        .then(data => {
+            // 返回收藏列表數據
+            return data;
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            // 若請求失敗，返回空
+            return [];
+        });
 }
-
 function renderFavorites(favorites) {
     const container = document.querySelector('.n-content');
     container.innerHTML = '';
