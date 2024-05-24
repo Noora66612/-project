@@ -105,10 +105,10 @@
                 while($row = mysqli_fetch_assoc($result)) {
                     echo '<div class="row">';
                     echo '    <div class="row-img">';
-                    echo '        <a href="introduction.html"><img src="img/' . $row["圖片"] .'" alt="' . $row["餐廳名"] . '"></a>';
+                    echo '        <a href="introduction.php?id=' . $row["編號"] . '"><img src="img/' . $row["圖片"] .'" alt="' . $row["餐廳名"] . '"></a>';
                     echo '    </div>';
                     echo '    <div class="row-content">';
-                    echo '        <a href="introduction.html">' . $row["餐廳名"] . '</a>';
+                    echo '        <a href="introduction.php?id=' . $row["編號"] . '">' . $row["餐廳名"] . '</a>';
                     echo '        <div class="opening-hour">';
                     echo '            <i class="ri-time-line"></i>';
                     echo '            營業時間：<br>' . $row["營業時間"];
@@ -168,10 +168,10 @@
                 while($row = mysqli_fetch_assoc($result)) {
                     echo '<div class="row">';
                     echo '    <div class="row-img">';
-                    echo '        <a href="introduction.html"><img src="img/' . $row["圖片"] .'" alt="' . $row["餐廳名"] . '"></a>';
+                    echo '        <a href="introduction.php?id=' . $row["編號"] . '"><img src="img/' . $row["圖片"] .'" alt="' . $row["餐廳名"] . '"></a>';
                     echo '    </div>';
                     echo '    <div class="row-content">';
-                    echo '        <a href="introduction.html">' . $row["餐廳名"] . '</a>';
+                    echo '        <a href="introduction.php?id=' . $row["編號"] . '">' . $row["餐廳名"] . '</a>';
                     echo '        <div class="opening-hour">';
                     echo '            <i class="ri-time-line"></i>';
                     echo '            營業時間：<br>' . $row["營業時間"];
@@ -233,10 +233,10 @@
                 while($row = mysqli_fetch_assoc($result)) {
                     echo '<div class="row">';
                     echo '    <div class="row-img">';
-                    echo '       <a href="introduction.html"><img src="img/' . $row["圖片"] .'" alt="' . $row["餐廳名"] . '"></a>';
+                    echo '       <a href="introduction.php?id=' . $row["編號"] . '"><img src="img/' . $row["圖片"] .'" alt="' . $row["餐廳名"] . '"></a>';
                     echo '    </div>';
                     echo '    <div class="row-content">';
-                    echo '        <a href="introduction.html">' . $row["餐廳名"] . '</a>';
+                    echo '        <a href="introduction.php?id=' . $row["編號"] . '">' . $row["餐廳名"] . '</a>';
                     echo '        <div class="opening-hour">';
                     echo '            <i class="ri-time-line"></i>';
                     echo '            營業時間：<br>' . $row["營業時間"];
@@ -299,10 +299,10 @@
                 while($row = mysqli_fetch_assoc($result)) {
                     echo '<div class="row">';
                     echo '    <div class="row-img">';
-                    echo '        <a href="introduction.html"><img src="img/' . $row["圖片"] .'" alt="' . $row["餐廳名"] . '"></a>';
+                    echo '        <a href="introduction.php?id=' . $row["編號"] . '"><img src="img/' . $row["圖片"] .'" alt="' . $row["餐廳名"] . '"></a>';
                     echo '    </div>';
                     echo '    <div class="row-content">';
-                    echo '        <a href="introduction.html">' . $row["餐廳名"] . '</a>';
+                    echo '        <a href="introduction.php?id=' . $row["編號"] . '">' . $row["餐廳名"] . '</a>';
                     echo '        <div class="opening-hour">';
                     echo '            <i class="ri-time-line"></i>';
                     echo '            營業時間：<br>' . $row["營業時間"];
@@ -365,10 +365,10 @@
                 while($row = mysqli_fetch_assoc($result)) {
                     echo '<div class="row">';
                     echo '    <div class="row-img">';
-                    echo '       <a href="introduction.html"><img src="img/' . $row["圖片"] .'" alt="' . $row["餐廳名"] . '"></a>';
+                    echo '       <a href="introduction.php?id=' . $row["編號"] . '"><img src="img/' . $row["圖片"] .'" alt="' . $row["餐廳名"] . '"></a>';
                     echo '    </div>';
                     echo '    <div class="row-content">';
-                    echo '        <a href="introduction.html">' . $row["餐廳名"] . '</a>';
+                    echo '        <a href="introduction.php?id=' . $row["編號"] . '">' . $row["餐廳名"] . '</a>';
                     echo '        <div class="opening-hour">';
                     echo '            <i class="ri-time-line"></i>';
                     echo '            營業時間：<br>' . $row["營業時間"];
