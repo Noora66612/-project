@@ -69,11 +69,11 @@
     <!--- sidebar --->
     <div id="mySidebar" class="sidebar">
         <a href="javascript:void(0)" class="close-btn" id="close-btn">&times;</a>
-        <a href="home.php">首頁</a>
+        <a href=home.php>首頁</a>
         <a href=all.php>所有餐廳</a>
         <a href=school.php>學餐</a>
-        <a href="backdoor.php">後門</a>
-        <a href="street.php">宵夜街</a>
+        <a href=backdoor.php>後門</a>
+        <a href=street.php>宵夜街</a>
         <a href="#">聯絡我們</a>
     </div>
 

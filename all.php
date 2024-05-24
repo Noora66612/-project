@@ -97,14 +97,14 @@
             }
 
             // 从数据库中获取所有餐厅数据
-            $sql = "SELECT 編號, 餐廳名, 地址, 營業時間, 公休日, 電話 FROM 名單";
+            $sql = "SELECT 編號,圖片, 餐廳名, 地址, 營業時間, 公休日, 電話 FROM 名單";
             $result = mysqli_query($conn, $sql);
  
             if (mysqli_num_rows($result) > 0) {
                 while($row = mysqli_fetch_assoc($result)) {
                     echo '<div class="row">';
                     echo '    <div class="row-img">';
-                    echo '        <a href="introduction.html"><img src="img/' . $row["餐廳名"] . '.jpg" alt="' . $row["餐廳名"] . '"></a>';
+                    echo '       <a href="introduction.html"><img src="img/' . $row["圖片"] .'" alt="' . $row["餐廳名"] . '"></a>';
                     echo '    </div>';
                     echo '    <div class="row-content">';
                     echo '        <a href="introduction.html">' . $row["餐廳名"] . '</a>';

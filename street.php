@@ -68,18 +68,18 @@
     <!--- sidebar --->
     <div id="mySidebar" class="sidebar">
         <a href="javascript:void(0)" class="close-btn" id="close-btn">&times;</a>
-        <a href="home.php">首頁</a>
+        <a href=home.php>首頁</a>
         <a href=all.php>所有餐廳</a>
         <a href=school.php>學餐</a>
-        <a href="backdoor.php">後門</a>
-        <a href="street.php">宵夜街</a>
+        <a href=backdoor.php>後門</a>
+        <a href=street.php>宵夜街</a>
         <a href="#">聯絡我們</a>
     </div>
 
 
 <section class="n-restaurants">
     <div class="center-text">
-        <h3>宵夜街餐廳</h3>
+    <h3><i class="ri-restaurant-line" style="margin-right: 10px;"></i>宵夜街餐廳</h3>
     </div> 
 
     <div class="n-content">
@@ -99,14 +99,14 @@
             }
 
             // 選擇地區為宵夜街的所有餐廳資料
-            $sql = "SELECT 編號, 餐廳名, 地址, 營業時間, 公休日, 電話 FROM 名單 WHERE 地區 = '宵夜街'";
+            $sql = "SELECT 編號,圖片, 餐廳名, 地址, 營業時間, 公休日, 電話 FROM 名單 WHERE 地區 = '宵夜街'";
             $result = mysqli_query($conn, $sql);
 
             if (mysqli_num_rows($result) > 0) {
                 while($row = mysqli_fetch_assoc($result)) {
                     echo '<div class="row">';
                     echo '    <div class="row-img">';
-                    echo '        <a href="introduction.html"><img src="img/' . $row["餐廳名"] . '.jpg" alt="' . $row["餐廳名"] . '"></a>';
+                    echo '        <a href="introduction.html"><img src="img/' . $row["圖片"] .'" alt="' . $row["餐廳名"] . '"></a>';
                     echo '    </div>';
                     echo '    <div class="row-content">';
                     echo '        <a href="introduction.html">' . $row["餐廳名"] . '</a>';
