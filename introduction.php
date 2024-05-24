@@ -80,7 +80,7 @@
     // 连接到数据库
     $servername = "localhost";
     $username = "root"; 
-    $password = "5253"; 
+    $password = ""; 
     $dbname = "餐廳"; 
 
     $conn = mysqli_connect($servername, $username, $password, $dbname);
