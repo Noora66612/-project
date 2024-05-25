@@ -10,8 +10,8 @@ if (!isset($_SESSION['user_id'])) {
 
 // 連接到資料庫
 $servername = "localhost";
-$username = "root";  // 根據你的資料庫設置
-$password = "";      // 根據你的資料庫設置
+$username = "root";  
+$password = "";      
 $dbname = "user";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
