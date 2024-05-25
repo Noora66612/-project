@@ -3,10 +3,12 @@ $servername = "localhost";
             $username = "root"; 
             $password = ""; 
             $dbname = "餐廳"; 
-            
+            $dbname2 = "favorite_restaurants";
+
             $conn = new mysqli($servername, $username, $password);
 
             $sql ="CREATE DATABASE IF NOT EXISTS $dbname";
+            $sql = "CREATE DATABASE IF NOT EXISTS $dbname2";
             $conn->query($sql);  
             
             $conn->select_db($dbname);
@@ -156,3 +158,14 @@ $servername = "localhost";
               (128, '128.png', '香米便當(松果)', '校內', '320桃園市中壢區中大路300號(松果餐廳)', '一 ~ 日 11:00-18:30', '無', '無'),
               (129, '129.jpg', '嗑早餐', '校內', '320桃園市中壢區中大路300號', '一 ~ 日 11:00-18:30', '無', '無')";
             $conn->query($sql);
+
+            $conn->select_db($dbname2);
+            $sql = "CREATE TABLE favorites (
+                id INT AUTO_INCREMENT PRIMARY KEY,
+                user_id INT NOT NULL,
+                restaurant_id INT NOT NULL,
+                name VARCHAR(255) NOT NULL,
+                img VARCHAR(255) NOT NULL,
+                hours VARCHAR(255) NOT NULL,
+                timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            )";
