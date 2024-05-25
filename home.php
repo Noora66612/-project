@@ -80,12 +80,11 @@
              // 连接到数据库
              $servername = "localhost";
              $username = "root"; 
-             $password = ""; 
+             $password = "5253"; 
              $dbname = "餐廳"; 
 
              $conn = mysqli_connect($servername, $username, $password, $dbname);
 
-<<<<<<< HEAD
             $conn = mysqli_connect($servername, $username, $password, $dbname);
 
             // 检查连接
@@ -95,11 +94,9 @@
             // 从数据库中選8個餐廳在每日推薦中呈現
             $sql = "SELECT * FROM 名單 ORDER BY RAND() LIMIT 3";
             $result = mysqli_query($conn, $sql);
-=======
              if (!$conn) {
                  die("连接失败: " . mysqli_connect_error());
              }
->>>>>>> f692fc737fbf42a38cc084eb4c833e11ab822ca7
 
              // 从数据库中選8個餐廳在每日推薦中呈現
              $sql = "SELECT * FROM 名單 ORDER BY RAND() LIMIT 3";
@@ -152,7 +149,7 @@
             // 连接到数据库
             $servername = "localhost";
             $username = "root"; 
-            $password = ""; 
+            $password = "5253"; 
             $dbname = "餐廳"; 
             $conn = mysqli_connect($servername, $username, $password, $dbname);
             // 检查连接
@@ -212,7 +209,7 @@
             // 连接到数据库
             $servername = "localhost";
             $username = "root"; 
-            $password = ""; 
+            $password = "5253"; 
             $dbname = "餐廳"; 
             $conn = mysqli_connect($servername, $username, $password, $dbname);
             // 检查连接
@@ -272,7 +269,7 @@
             // 连接到数据库
             $servername = "localhost";
             $username = "root"; 
-            $password = ""; 
+            $password = "5253"; 
             $dbname = "餐廳"; 
             $conn = mysqli_connect($servername, $username, $password, $dbname);
             // 检查连接
@@ -332,7 +329,7 @@
             // 连接到数据库
             $servername = "localhost";
             $username = "root"; 
-            $password = ""; 
+            $password = "5253"; 
             $dbname = "餐廳"; 
             $conn = mysqli_connect($servername, $username, $password, $dbname);
             // 检查连接
