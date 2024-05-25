@@ -169,3 +169,4 @@ $servername = "localhost";
                 hours VARCHAR(255) NOT NULL,
                 timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
             )";
+            $conn->query($sql);
