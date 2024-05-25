@@ -1,23 +1,18 @@
 <?php
 
 session_start();
+if (isset($_SESSION["user"])) {
+    header("Location: home.php");
+ } 
 
 if($_SERVER["REQUEST_METHOD"] == "POST"){
-    $servername = "localhost";
-    $username = "jennifer";
-    $password = "jennifer0216";
-    $dbname = "user";
-
-    $conn = new mysqli($servername, $username, $password, $dbname);
-
-    if ($conn->connect_error){
-        die("連接資料庫失敗： ". $conn->connect_error);
-    } 
     
-    $gmail = $conn->real_escape_string($_POST['gmail']);
+    $gmail = $_POST['gmail'];
     $password = $_POST['password'];
+    require_once "create_db.php";
 
-    $stmt = $conn->prepare("SELECT * FROM member WHERE gmail = ?");
+    $sql = $conn->prepare("SELECT * FROM member WHERE gmail = ?");
+    $stmt = $conn->prepare($sql);
     $stmt->bind_param("s", $gmail);
     $stmt->execute();
     $result = $stmt->get_result();
@@ -27,8 +22,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
         if (password_verify($password . $row['salt'], $row['hashed_password'])) {
             $_SESSION['user_id'] = $row['id'];
-            $_SESSION['user_account'] = $row['account'];            
             echo "<script>showModal('登入成功，歡迎回來 " . $row['account'] . "', true);</script>";
+            header("Locatioin: home.php");
+            exit();
         }else{
             echo "<script>showModal('密碼錯誤，請重新嘗試。',false);<script>";
         }
