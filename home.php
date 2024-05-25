@@ -12,20 +12,16 @@
     crossorigin="anonymous"></script>
     <title>央央熊食在</title>
     <link rel="stylesheet" type="text/css" href="home.css">
-
     <!-- box-icon link -->
     <link rel="stylesheet" 
      href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
-
     <!-- remix-icons link -->
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
     rel="stylesheet"/>
     
     <!-- google fonts link -->
-
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     
-
 </head>
 <body>
  
@@ -50,7 +46,6 @@
                 </ul>
             </li>
         </ul> 
-
         <div class="nav-right d-flex align-items-center">
             <form class="d-flex align-items-center search-form" style="margin-right: 15px;">
                 <form class="d-flex align-items-center search-form" style="margin-right: 15px;">
@@ -60,36 +55,37 @@
                     </button>
                 </form> 
             </form>            
-            <a href="myfavfix.html"><i class="ri-heart-line"></i></a>
-            <a href="user.html"><i class="ri-user-line"></i></a>
+            <a href=myfavfix.php><i class="ri-heart-line"></i></a>
+            <a href=user.php><i class="ri-user-line"></i></a>
             <div class="bx bx-menu" id="menu-icon"></div>
         </div>  
     </header>
-
     <!--- sidebar --->
     <div id="mySidebar" class="sidebar">
         <a href="javascript:void(0)" class="close-btn" id="close-btn">&times;</a>
         <a href=home.php>首頁</a>
         <a href=all.php>所有餐廳</a>
         <a href=school.php>學餐</a>
-        <a href=backdoor.php>後門</a>
-        <a href=street.php>宵夜街</a>
-        <a href="#">聯絡我們</a>
+        <a href="backdoor.php">後門</a>
+        <a href="street.php">宵夜街</a>
+        <a href="#" data-bs-toggle="modal" data-bs-target="#contactModal">聯絡我們</a>   
     </div>
+  <!--- 每日推薦 --->
+  <section class="recs">
+        <div class="center-text">
+            <h3><i class="ri-lightbulb-line" style="margin-right: 5px;"></i>每日推薦</h3>
+        </div>  
+         <div class="n-content">
+             <?php
+             // 连接到数据库
+             $servername = "localhost";
+             $username = "root"; 
+             $password = ""; 
+             $dbname = "餐廳"; 
 
- <!--- 每日推薦 --->
-        <section class="n-restaurants">
-        <div class="center-text" style="margin-top: 35px;">
-        <h3><i class="ri-lightbulb-line" style="margin-right: 5px;"></i>每日推薦</h3>
-        </div> 
-        <div class="n-content">
-            <?php
-            // 連接到資料庫
-            $servername = "localhost";
-            $username = "root"; 
-            $password = "5253"; 
-            $dbname = "餐廳"; 
+             $conn = mysqli_connect($servername, $username, $password, $dbname);
 
+<<<<<<< HEAD
             $conn = mysqli_connect($servername, $username, $password, $dbname);
 
             // 检查连接
@@ -99,7 +95,15 @@
             // 从数据库中選8個餐廳在每日推薦中呈現
             $sql = "SELECT * FROM 名單 ORDER BY RAND() LIMIT 3";
             $result = mysqli_query($conn, $sql);
+=======
+             if (!$conn) {
+                 die("连接失败: " . mysqli_connect_error());
+             }
+>>>>>>> f692fc737fbf42a38cc084eb4c833e11ab822ca7
 
+             // 从数据库中選8個餐廳在每日推薦中呈現
+             $sql = "SELECT * FROM 名單 ORDER BY RAND() LIMIT 3";
+             $result = mysqli_query($conn, $sql);
             if (mysqli_num_rows($result) > 0) {
                 while($row = mysqli_fetch_assoc($result)) {
                     echo '<div class="row">';
@@ -133,12 +137,11 @@
             } else {
                 echo "沒有餐廳數據";
             }
-
             mysqli_close($conn);
             ?>
         </div>
+        </div>
     </section>
-
       <!--- 所有餐廳 --->
       <section class="n-restaurants">
         <div class="center-text">
@@ -149,20 +152,16 @@
             // 连接到数据库
             $servername = "localhost";
             $username = "root"; 
-            $password = "5253"; 
+            $password = ""; 
             $dbname = "餐廳"; 
-
             $conn = mysqli_connect($servername, $username, $password, $dbname);
-
             // 检查连接
             if (!$conn) {
-                die("连接失败: " . mysqli_connect_error());
+                die("连接失败1: " . mysqli_connect_error());
             }
-
             // 从数据库中選8個餐廳在所有餐廳中呈現
             $sql = "SELECT * FROM 名單 ORDER BY RAND() LIMIT 8";
             $result = mysqli_query($conn, $sql);
-
             if (mysqli_num_rows($result) > 0) {
                 while($row = mysqli_fetch_assoc($result)) {
                     echo '<div class="row">';
@@ -203,7 +202,6 @@
     <div class="n-btn">
         <a href=all.php class="btn">查看所有</a>
     </div>
-
     <!--- 後門餐廳 --->
     <section class="n-restaurants">
         <div class="center-text">
@@ -214,20 +212,16 @@
             // 连接到数据库
             $servername = "localhost";
             $username = "root"; 
-            $password = "5253"; 
+            $password = ""; 
             $dbname = "餐廳"; 
-
             $conn = mysqli_connect($servername, $username, $password, $dbname);
-
             // 检查连接
             if (!$conn) {
-                die("连接失败: " . mysqli_connect_error());
+                die("连接失败2: " . mysqli_connect_error());
             }
-
             // 从数据库中選8個餐廳且地區=後門的資料在後門餐廳中呈現
             $sql = "SELECT * FROM 名單 WHERE 地區='後門' ORDER BY RAND() LIMIT 8";
             $result = mysqli_query($conn, $sql);
-
             if (mysqli_num_rows($result) > 0) {
                 while($row = mysqli_fetch_assoc($result)) {
                     echo '<div class="row">';
@@ -261,7 +255,6 @@
             } else {
                 echo "沒有餐廳數據";
             }
-
             mysqli_close($conn);
             ?>
         </div>
@@ -269,7 +262,6 @@
     <div class="n-btn">
         <a href=backdoor.php class="btn">查看所有</a>
     </div>
-
     <!--- 宵夜街餐廳 --->
     <section class="n-restaurants">
         <div class="center-text">
@@ -280,20 +272,16 @@
             // 连接到数据库
             $servername = "localhost";
             $username = "root"; 
-            $password = "5253"; 
+            $password = ""; 
             $dbname = "餐廳"; 
-
             $conn = mysqli_connect($servername, $username, $password, $dbname);
-
             // 检查连接
             if (!$conn) {
-                die("连接失败: " . mysqli_connect_error());
+                die("连接失败3: " . mysqli_connect_error());
             }
-
             // 从数据库中選8個餐廳且地區=宵夜街的資料在宵夜街餐廳中呈現
             $sql = "SELECT * FROM 名單 WHERE 地區='後門' ORDER BY RAND() LIMIT 8";
             $result = mysqli_query($conn, $sql);
-
             if (mysqli_num_rows($result) > 0) {
                 while($row = mysqli_fetch_assoc($result)) {
                     echo '<div class="row">';
@@ -327,7 +315,6 @@
             } else {
                 echo "沒有餐廳數據";
             }
-
             mysqli_close($conn);
             ?>
         </div>
@@ -335,7 +322,6 @@
     <div class="n-btn">
         <a href=street.php class="btn">查看所有</a>
     </div>
-
     <!--- 學餐餐廳 --->
     <section class="n-restaurants">
         <div class="center-text">
@@ -346,20 +332,16 @@
             // 连接到数据库
             $servername = "localhost";
             $username = "root"; 
-            $password = "5253"; 
+            $password = ""; 
             $dbname = "餐廳"; 
-
             $conn = mysqli_connect($servername, $username, $password, $dbname);
-
             // 检查连接
             if (!$conn) {
-                die("连接失败: " . mysqli_connect_error());
+                die("连接失败4: " . mysqli_connect_error());
             }
-
             // 从数据库中選8個餐廳且地區=校內的資料在學餐餐廳中呈現
             $sql = "SELECT * FROM 名單 WHERE 地區='校內' ORDER BY RAND() LIMIT 8";
             $result = mysqli_query($conn, $sql);
-
             if (mysqli_num_rows($result) > 0) {
                 while($row = mysqli_fetch_assoc($result)) {
                     echo '<div class="row">';
@@ -393,13 +375,25 @@
             } else {
                 echo "沒有餐廳數據";
             }
-
             mysqli_close($conn);
             ?>
         </div>
     </section>
     <div class="n-btn">
         <a href=school.php class="btn">查看所有</a>
+    </div>
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="contactModalLabel"><i class="ri-mail-line" style="margin-right: 10px;"></i>聯絡我們</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>哈囉！有任何問題歡迎聯絡信箱：<a href="mailto:ncufood@gmail.com">ncufood@gmail.com</a>，我們會儘速處理唷！</p>
+                </div>
+            </div>
+        </div>
     </div>
     <!--- custom js link --->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" 

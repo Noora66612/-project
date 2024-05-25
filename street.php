@@ -11,7 +11,7 @@
     integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" 
     crossorigin="anonymous"></script>
     <title>央央熊食在</title>
-    <link rel="stylesheet" type="text/css" href="home.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
 
     <!-- box-icon link -->
     <link rel="stylesheet" 
@@ -30,7 +30,7 @@
 
  <!--- header --->
  <header>
-        <a href="#" class="logo">央央熊食在</a>
+        <a href=home.php class="logo">央央熊食在</a>
         <ul class="navlist">
             <li class="nav-item">
                 <a href=home.php class="nav-link">首頁</a>
@@ -73,7 +73,7 @@
         <a href=school.php>學餐</a>
         <a href=backdoor.php>後門</a>
         <a href=street.php>宵夜街</a>
-        <a href="#">聯絡我們</a>
+        <a href="#" data-bs-toggle="modal" data-bs-target="#contactModal">聯絡我們</a>   
     </div>
 
 
@@ -87,7 +87,7 @@
             // 連接資料庫
             $servername = "localhost";
             $username = "root";
-            $password = "5253";
+            $password = "";
             $dbname = "餐廳";
 
             // 建立連線
@@ -106,10 +106,10 @@
                 while($row = mysqli_fetch_assoc($result)) {
                     echo '<div class="row">';
                     echo '    <div class="row-img">';
-                    echo '        <a href="introduction.html"><img src="img/' . $row["圖片"] .'" alt="' . $row["餐廳名"] . '"></a>';
+                    echo '       <a href="introduction.php?id=' . $row["編號"] . '"><img src="img/' . $row["圖片"] .'" alt="' . $row["餐廳名"] . '"></a>';
                     echo '    </div>';
                     echo '    <div class="row-content">';
-                    echo '        <a href="introduction.html">' . $row["餐廳名"] . '</a>';
+                    echo '        <a href="introduction.php?id=' . $row["編號"] . '">' . $row["餐廳名"] . '</a>';
                     echo '        <div class="opening-hour">';
                     echo '            <i class="ri-time-line"></i>';
                     echo '            營業時間：<br>' . $row["營業時間"];
@@ -139,9 +139,21 @@
         ?>
          </div>
     </section>
-    <div class="n-btn">
-        <a href="#" class="btn">查看所有</a>
+
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="contactModalLabel"><i class="ri-mail-line" style="margin-right: 10px;"></i>聯絡我們</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>哈囉！有任何問題歡迎聯絡信箱：<a href="mailto:ncufood@gmail.com">ncufood@gmail.com</a>，我們會儘速處理唷！</p>
+                </div>
+            </div>
+        </div>
     </div>
+
     <!--- custom js link --->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" 
     integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" 

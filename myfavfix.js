@@ -27,19 +27,17 @@ document.addEventListener("scroll", function(event) {
 });
 
 document.addEventListener("DOMContentLoaded", function() {
-    // 替換為實際用戶帳號
-    const account = 'example_account'; 
-
-    // 初始化按鈕
-    initializeFavoriteButtons(account);
-
-    // 加載收藏
-    loadFavorites(account);
-
-    // 綁定排序功能
-    document.getElementById("sort-select").addEventListener("change", function() {
-        loadFavorites(account);
-    });
+    // 取得當前用戶的 account
+    fetch('getAccount.php')
+        .then(response => response.json())
+        .then(data => {
+            const account = data.account;
+            initializeFavoriteButtons(account);
+            loadFavorites(account);
+            document.getElementById("sort-select").addEventListener("change", function() {
+                loadFavorites(account);
+            });
+        });
 });
 
 function initializeFavoriteButtons(account) {
