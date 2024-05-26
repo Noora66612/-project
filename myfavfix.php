@@ -101,7 +101,7 @@
             }
 
     
-            $sql = "SELECT 編號,圖片, 餐廳名, 地址, 營業時間, 公休日,電話 FROM 名單 WHERE 地區 = '校內'";
+            $sql = "SELECT 名單.編號, 名單.圖片, 名單.餐廳名, 名單.地址, 名單.營業時間, 名單.公休日, 名單.電話 FROM 名單 INNER JOIN favorites ON 名單.編號 = favorites.restaurant_id WHERE favorites.user_id = $user_id";
             $result = mysqli_query($conn, $sql);
 
             if (mysqli_num_rows($result) > 0) {

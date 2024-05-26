@@ -78,7 +78,7 @@ $servername = "localhost";
               (52, '52.jpg', '粥王', '宵夜街', '320桃園市中壢區五興路400號', '一 ~ 五 11:30-20:00', '六日', '0903213305'),
               (53, '53.png', '無人拉麵店', '宵夜街', '320桃園市中壢區五興路345號', '24小時營業', '無', '0955155814'),
               (54, '54.jpg', '滿食記 ', '宵夜街', ' 320桃園市中壢區五興路附近', '日 ~ 五 12:00-14:00, 17:00-20:00', '六', '0933853850'),
-              (55, '55.png', '東東生鮮手工大水餃', '宵夜街', '320桃園市中壢區五興路', '一 ~ 日 11:30-14:00, 17:00-19:30', '無', '0960772157'),
+              (55, '55.jpg', '東東生鮮手工大水餃', '宵夜街', '320桃園市中壢區五興路', '一 ~ 日 11:30-14:00, 17:00-19:30', '無', '0960772157'),
               (56, '56.png', '夏克堤', '宵夜街', '320桃園市中壢區五興路', '一 ~ 日12:00-23:00', '無', '0912528414'),
               (57, '57.png', '立橙茶飲', '宵夜街', '320桃園市中壢區五興路345號', '一 ~ 日11:30-00:00', '無', ' 0978720021'),
               (58, '58.png', '一億園 ', '宵夜街', '320桃園市中壢區五興路345號', ' 一 ~ 五11:00-19:30', '六日', '無'),
@@ -154,29 +154,23 @@ $servername = "localhost";
               (129, '129.jpg', '香米便當‧自助餐(九餐）', '校內', '320桃園市中壢區中大路300號', '一 ~ 五 11:30-13:00, 17:00-19:30', '六日', '0937811130'),
               (130, '130.png', '全家（松果）', '校內','320桃園市中壢區中大路300號', '一 ~ 日 7:00-1:00', '無', '034206551'),
               (131, '131.jpg', '全家（九餐）', '校內','320桃園市中壢區中大路300號', '一 ~ 日 7:00-1:00', '無', '034265685')";
+
             $conn->query($sql);
 
-            $servername = "localhost";
-            $username = "root"; 
-            $password = "nc@p12rs00a4"; 
-            $dbname2 = "favorites"; 
-            
-            $conn = new mysqli($servername, $username, $password);
-
-            $sql ="CREATE DATABASE IF NOT EXISTS $dbname2";
-            $conn->query($sql);  
-            
             $conn->select_db($dbname2);
-           $sql = "CREATE TABLE favorites (
-                id INT AUTO_INCREMENT PRIMARY KEY,
-                account VARCHAR(255) NOT NULL,
-                restaurant_id INT NOT NULL,
-                name VARCHAR(255) NOT NULL,
-                img VARCHAR(255) NOT NULL,
-                hours VARCHAR(255) NOT NULL,
-                timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-            )";
-            $conn->query($sql);  
-
-
-            
+            $sql = "CREATE TABLE favorites (
+              id INT AUTO_INCREMENT PRIMARY KEY,
+              user_id INT NOT NULL,
+              restaurant_id INT NOT NULL,
+              created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+              FOREIGN KEY (restaurant_id) REFERENCES restaurants(編號)
+          )";
+            $sql = "CREATE TABLE IF NOT EXISTS 評論 (
+              id INT AUTO_INCREMENT PRIMARY KEY,
+              餐廳編號 INT NOT NULL,
+              評論內容 TEXT NOT NULL,
+              評論時間 TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+              FOREIGN KEY (餐廳編號) REFERENCES 名單(編號)
+          )";
+          $conn->close();
+?>

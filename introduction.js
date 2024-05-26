@@ -50,54 +50,6 @@ cancelButton.addEventListener('click', function() {
     adjustHeight(); // 重置高度
 });
 
-submitButton.addEventListener('click', function() {
-    const reviewText = textarea.value.trim();
-    if (reviewText) {
-        addComment(reviewText); // 添加評論
-        saveComment(reviewText); // 保存評論到 localStorage
-        textarea.value = '';
-        adjustHeight(); 
-    } else {
-        alert('請輸入評論');
-    }
-});
-
-function adjustHeight() {
-    textarea.style.height = 'auto';
-    textarea.style.height = (textarea.scrollHeight) + 'px';
-}
-
-function addComment(text) {
-    const currentDate = new Date();
-    const commentDate = `${currentDate.getFullYear()}-${String(currentDate.getMonth() + 1).padStart(2, '0')}`;
-    const commentDiv = document.createElement('div');
-    commentDiv.className = 'comment';
-
-    const textDiv = document.createElement('div');
-    textDiv.className = 'text';
-    textDiv.textContent = text;
-
-    const dateDiv = document.createElement('div');
-    dateDiv.className = 'date';
-    dateDiv.textContent = commentDate;
-
-    commentDiv.appendChild(textDiv);
-    commentDiv.appendChild(dateDiv);
-    commentsContainer.appendChild(commentDiv);
-}
-
-function saveComment(text) {
-    const comments = JSON.parse(localStorage.getItem('comments')) || [];
-    const currentDate = new Date();
-    const commentDate = `${currentDate.getFullYear()}-${String(currentDate.getMonth() + 1).padStart(2, '0')}`;
-    comments.push({ text, date: commentDate });
-    localStorage.setItem('comments', JSON.stringify(comments));
-}
-
-function loadComments() {
-    const comments = JSON.parse(localStorage.getItem('comments')) || [];
-    comments.forEach(comment => addComment(comment.text, comment.date));
-}
 
 const searchInput = document.querySelector('.search-input');
 const searchForm = document.querySelector('.search-form'); // Assuming the search form element

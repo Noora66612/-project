@@ -50,7 +50,7 @@
             </ul> 
     
             <div class="nav-right d-flex align-items-center">
-    
+                <form class="d-flex align-items-center search-form" style="margin-right: 15px;">    
                     <form class="d-flex align-items-center search-form" style="margin-right: 15px;" action="search.php" method="get">
                         <input class="form-control me-2 search-input" type="search" name="query" placeholder="搜尋" aria-label="Search">
                             <button class="search-btn" type="button">
@@ -59,11 +59,11 @@
         <!-- 新增一個隱藏的提交按鈕 -->
                             <button type="submit" style="display: none;" aria-hidden="true"></button>
                         </form>
-            
-            <a href=myfavfix.php><i class="ri-heart-line"></i></a>
-            <a href=user.php><i class="ri-user-line"></i></a>
-            <div class="bx bx-menu" id="menu-icon"></div>
-        </div>    
+                </form>            
+                <a href="myfavfix.html"><i class="ri-heart-line"></i></a>
+                <a href="user.html"><i class="ri-user-line"></i></a>
+                <div class="bx bx-menu" id="menu-icon"></div>
+            </div>  
         </header>
     
         <!--- sidebar --->
@@ -127,7 +127,7 @@
                     echo '            </div>';
                     echo '        </div>';
                     echo '        <div class="row-right">';
-                    echo '            <Button onclick="Toggle(this)" class="btn1" data-id="' .$row["編號"].'" data-name="'. $row["餐廳名"] .'" data-img="img/' . $row["餐廳名"] . '.jpg" data-hours="' . $row["營業時間"].'"><i class="ri-heart-fill"></i></Button>';
+                    echo '            <button onclick="addToFavorites('.$row['編號'].')" class="btn1"><i class="ri-heart-fill"></i></button>';
                     echo '        </div>';
                     echo '    </div>';
                     echo '</div>';
@@ -174,5 +174,7 @@
             });
         });
     </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 </body>
 </html>
