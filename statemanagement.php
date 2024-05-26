@@ -1,57 +1,44 @@
 <?php
-session_start();
-if (isset($_SESSION["user"])) {
-    header("Location: home.php");
- }
-    
- if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
+session_start();
+$_SESSION['gmail'] = '0';
+$_SESSION['password'] = '0';
+$_SESSION['confirm_password'] = '0';
+if(isset($_POST['signup_submit'])){
+    insert();
+}
+function insert(){
     $gmail = $_POST['gmail'];
     $raw_password = $_POST['password'];
     $confirm_password = $_POST['confirm_password'];
 
-    $error_message = "";
-
-    if(!filter_var($gmail, FILTER_VALIDATE_EMAIL)){
-        $errror_message = "請輸入有效的郵件地址。<br>";
+    if (strlen($raw_password) <= 5 || !preg_match("/^(?=.*[A-Za-z])(?=.*\d)/", $raw_password)) {
+        echo "<script>alert('密碼必須包含至少一個英文字母和一個數字，長度超過 6。'); window.location.href = 'user.html';</script>";
+    }
+    
+    if ($raw_password !== $confirm_password) {
+        echo "<script>alert('確認密碼與密碼不一致'); window.location.href = 'user.html';</script>";
+        return;
     }
 
-    if(strlen($raw_password) <= 5 || !preg_match("/^(?=.*[A-Za-z])(?=.*\d)/", $raw_password)){
-        $error_message .= "密碼必須包含至少一個英文字母和一個數字，長度超過5。<br>";
-    }
+    require("user_database.php");
+    
+    $passwordHash = password_hash($raw_password, PASSWORD_DEFAULT);
+    $sql = "SELECT * FROM member WHERE gmail = '$gmail'";
+    $result = mysqli_query($conn, $sql);
+    $rowCount = mysqli_num_rows($result);
 
-    if($raw_password !== $confirm_password){
-        $error_message .= "確認密碼與密碼不一致。<br>";
-    }
-
-    require_once "create_db.php";
-    $stmt = $conn->prepare("SELECT * FROM member WHERE gmail = ?");
-    $stmt = $conn->prepare($sql);
-    $stmt->bind_param("s", $gmail);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    if ($result->num_rows > 0) {
-        $error_message .= "帳號已存在，請選擇另一個帳號。<br>";
-    }
-
-    if(!empty($error_message)){
-        echo "<script>showModal('$error_message', false);</script>";
+    if ($rowCount > 0) {
+        echo "<script>alert('帳號已存在。'); window.location.href = 'user.html';</script>";
     }else{
-        $hashedPassword = password_hash($raw_password, PASSWORD_BCRYPT);
-
-        $stmt = $conn->prepare("INSERT INTO member (gmail, account, hashed_password) VALUES (?, ?, ?)");
-        $stmt->bind_param("sss", $gmail, $account, $hashedPassword);
-
-        if($stmt->execute() === TRUE){
-            echo "<script>showModal('註冊成功，您的帳號為 $account', true);</script>";
-        } else {
-            echo "<script>showModal('註冊失敗： " . $conn->error . "', false);</script>";
+        $sql = "INSERT INTO member (gmail, passwordHash) VALUES ('$gmail', '$raw_password')";
+        $result = mysqli_query($conn, $sql) or die("新增資料失敗，請洽詢相關人員" . mysqli_error($conn));
+    
+        if ($result) {
+        echo "<script>alert('註冊成功，請重新登入，正在回到首頁'); window.location.href = 'user.html';</script>";
         }
     }
 
-    $stmt->close();
-    $conn->close();
+    mysqli_close($conn);
 }
 ?>
-
-

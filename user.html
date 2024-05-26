@@ -12,7 +12,7 @@
           font-family: Noto Serif TC;
         }
 
-        h2, #gmail, #password, #gmail2, #password2, #comfirm_password, #gmail3, #password3 {
+        h2, #gmail, #password, #gmail2, #password2, #confirm_password, #gmail3, #password3 {
           width: 300px;
           height: 35px;
           margin: 20px;
@@ -53,8 +53,8 @@
           width: 400px;
           height: 600px;
           background-color: white;
-          border-radius: 80px;
-          border-top: 20px solid #645753;
+          border-radius: 80px;  /*圓角*/
+          border-top: 20px solid #645753;  /*定位對齊*/
           position: relative;
           margin: auto;
           top: 100px;
@@ -88,6 +88,42 @@
           border: solid 1px #ccc;
           border-radius: 5px;
         }
+
+        .modal {
+          display: none;
+          position: fixed;
+          z-index: 1;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          overflow: auto;
+          background-color: rgb(0,0,0);
+          background-color: rgba(0,0,0,0.4);
+        }
+        .modal-content {
+          background-color: #fefefe;
+          margin: 15% auto;
+          padding: 20px;
+          border: 1px solid #888;
+          width: 80%;
+          max-width: 300px;
+          text-align: center;
+          border-radius: 10px;
+        }
+        .close {
+          color: #aaa;
+          float: right;
+          font-size: 28px;
+          font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+          color: black;
+          text-decoration: none;
+          cursor: pointer;
+        }
     </style>
 
     <script>
@@ -106,7 +142,7 @@
           signup.style.visibility = "visible";
           document.getElementById("gmail2").value = "";
           document.getElementById("password2").value = "";
-          document.getElementById("comfirm_password").value = "";
+          document.getElementById("confirm_password").value = "";
         }
       }
 
@@ -146,16 +182,16 @@
       <div class="login">  
         <h2>登入</h2>
 
-        <form action="usermanagement.php">
-          <input type="text" id="gmail" name="gmail" placeholder="電子郵件" required>
+        <form action="usermanagement.php" method="POST" onsubmit="handleSubmit(event, 'login')">
+          <input type="email" id="gmail" name="gmail" placeholder="電子郵件" required>
           <div class="tab"></div>
           <input type="password" id="password" name="password" placeholder="密碼" required>
           <div class="tab"></div>
-          <input type="submit" value="送出" class="submit" onclick="location.href='submitsuccessful.php'"> 
+          <input type="submit" name="login_submit" value="送出" class="submit" > 
         </form>  
 
-        <h6 onclick="show_hide()">還沒有帳號？<u>註冊</u></h6>
-        <h5 onclick="show_forgetpassword()"><u>忘記密碼</u>?</h5>
+        <h6 href="#" onclick="show_hide()">還沒有帳號？<u>註冊</u></h6>
+        <h5 href="#" onclick="show_forgetpassword()"><u>忘記密碼</u>?</h5>
 
       </div><!-- login end-->
     </div><!-- container1 end-->
@@ -167,17 +203,17 @@
       <div class="signup">  
         <h2>註冊</h2>
 
-        <form action="statemanagement.php">
-          <input type="text" id="gmail2" name="gmail" placeholder="電子郵件" required>
+        <form action="statemanagement.php" method="POST" onsubmit="handleSubmit(event, 'signup')">
+          <input type="email" id="gmail2" name="gmail" placeholder="電子郵件" required>
           <div class="tab"></div>
-          <input type="password" id="password2" name="password" placeholder="密碼" required>
+          <input type="password" id="password2" name="password" placeholder="密碼(至少一個英文字母和數字，長度超過5)" required>
           <div class="tab"></div>
-          <input type="text" id="comfirm_password" name="comfirm_password" placeholder="確認密碼" required>
+          <input type="password" id="confirm_password" name="confirm_password" placeholder="確認密碼" required>
           <div class="tab"></div>            
-          <input type="submit" value="送出" class="submit">
+          <input type="submit" name="signup_submit" value="送出" class="submit">
         </form>  
 
-        <h6 onclick="show_hide()">已經有帳號？<u>登入</u></h6>
+        <h6 href="#" onclick="show_hide()">已經有帳號？<u>登入</u></h6>
         
       </div><!-- signup end-->
     </div><!-- container2 end-->
@@ -189,18 +225,26 @@
       <div class="forgetpassword">  
         <h2>忘記密碼？</h2>
 
-        <form action="statemanagement.php">
-          <input type="text" id="gmail3" name="gmail" placeholder="電子郵件" required>
+        <form action="resetpassword.php" method = "POST" onsubmit="handleSubmit(event, 'reset')">
+          <input type="email" id="gmail3" name="gmail" placeholder="電子郵件" required>
           <div class="tab"></div>
-          <input type="password" id="password3" name="password" placeholder="重設密碼" required>
+          <input type="password" id="password3" name="password" placeholder="重設密碼(至少一個英文字母和數字，長度超過5)" required>
           <div class="tab"></div>
-          <input type="submit" value="送出" class="submit" onclick="location.href='submitsuccessful.php'">  
+          <input type="submit" value="送出" class="submit" >  
         </form>
 
-        <h6 onclick="show_login()">返回<u>登入</u></h6>
+        <h6 href="#" onclick="show_login()">返回<u>登入</u></h6>
       </div><!-- forgetpassword end-->
     </div><!-- container3 end-->
   </div><!-- forgetpassword_page end-->
 
+  
+  <div id="myModal" class="modal">
+    <div class="modal-content" id="modal-content">
+      <span class="close" onclick="document.getElementById('myModal').style.display='none'">&times;</span>
+    </div>
+  </div>
+
+  
 </body>
 </html>
