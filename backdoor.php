@@ -50,15 +50,13 @@
         </ul> 
 
         <div class="nav-right d-flex align-items-center">
-            <form class="d-flex align-items-center search-form" style="margin-right: 15px;">    
-                <form class="d-flex align-items-center search-form" style="margin-right: 15px;" action="search.php" method="get">
-                    <input class="form-control me-2 search-input" type="search" name="query" placeholder="搜尋" aria-label="Search">
+            <form class="d-flex align-items-center search-form" style="margin-right: 15px;">
+                <form class="d-flex align-items-center search-form" style="margin-right: 15px;">
+                    <input class="form-control me-2 search-input" type="search" placeholder="Search" aria-label="Search">
                     <button class="search-btn" type="button">
                         <i class="ri-search-line"></i>
                     </button>
-        <!-- 新增一個隱藏的提交按鈕 -->
-                    <button type="submit" style="display: none;" aria-hidden="true"></button>
-                </form>
+                </form> 
             </form>            
             <a href="myfavfix.html"><i class="ri-heart-line"></i></a>
             <a href="user.html"><i class="ri-user-line"></i></a>
@@ -88,7 +86,7 @@
             // 连接到数据库
             $servername = "localhost";
             $username = "root"; 
-            $password = "5253"; 
+            $password = "nc@p12rs00a4"; 
             $dbname = "餐廳"; 
 
             $conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -161,24 +159,5 @@
     crossorigin="anonymous"></script>
     <script src="home.js"></script>
     <script src="myfavfix.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', (event) => {
-            const searchInput = document.querySelector('.search-input');
-            const searchForm = document.querySelector('.search-form');
-            const hiddenSubmitButton = searchForm.querySelector('[type="submit"]');
-
-            searchInput.addEventListener('keypress', function (e) {
-                if (e.key === 'Enter') {
-                    e.preventDefault(); // 防止表單的默認提交
-                    hiddenSubmitButton.click(); // 手動觸發隱藏的提交按鈕
-                }
-            });
-
-            const searchBtn = document.querySelector('.search-btn');
-            searchBtn.addEventListener('click', () => {
-                searchForm.submit();
-            });
-        });
-    </script>
 </body>
 </html>
