@@ -7,6 +7,10 @@ $dbname = "user";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
+$sql ="CREATE DATABASE IF NOT EXISTS $dbname";
+$conn->query($sql);  
+$conn->select_db($dbname);
+
 if ($conn->connect_error) {
     die("連接失敗: " . mysqli_connect_error());
 }
