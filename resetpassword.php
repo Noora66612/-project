@@ -22,10 +22,10 @@ if (isset($_POST['reset_submit'])) {
             $hashedPassword = password_hash($new_password, PASSWORD_BCRYPT);
             $sql_reset = "UPDATE member SET passwordHash = $hashedPassword WHERE gmail = '$gmail'";
             mysqli_query($conn, $sql);
-            echo "<script>alert('密碼重設成功。'); window.location.href = 'user.html';</script>";
+            echo "<script>alert('密碼重設成功。'); window.location.href = 'user.php';</script>";
         }
     } else {
-        echo "<script>alert('密碼重設失敗。'); window.location.href = 'user.html';</script>";
+        echo "<script>alert('密碼重設失敗。'); window.location.href = 'user.php';</script>";
     }
 
     $conn->close();
