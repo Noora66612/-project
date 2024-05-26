@@ -9,12 +9,10 @@ $conn1 = mysqli_connect($servername, $username, $password, $dbname);
 if (!$conn1) {
     die("连接失败: " . mysqli_connect_error());
 }
-$servername2 = "localhost";
-$username2 = "jennifer";
-$password2 = "jennifer0216";
+
 $dbname2 = "user";
 
-$conn2 = new mysqli($servername2, $username2, $password2, $dbname2);
+$conn2 = new mysqli($servername, $username, $password, $dbname2);
 if (!$conn2) {
     die("连接失败: " . mysqli_connect_error());
 }
