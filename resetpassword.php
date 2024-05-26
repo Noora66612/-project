@@ -1,6 +1,10 @@
 <?php
+session_start();
+if (isset($_POST['reset_submit'])) {
+    reset();
+ } 
 
-if($_SERVER["REQUEST_METHOD"] == "POST"){
+ function reset(){
 
     $gmail = $_POST['gmail'];
     $new_password = $_POST['password'];
