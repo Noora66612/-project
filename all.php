@@ -172,11 +172,6 @@
                     hiddenSubmitButton.click(); // 手動觸發隱藏的提交按鈕
                 }
             });
-
-            const searchBtn = document.querySelector('.search-btn');
-            searchBtn.addEventListener('click', () => {
-                searchForm.submit();
-            });
         });
     </script>
 </body>
