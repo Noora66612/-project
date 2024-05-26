@@ -162,6 +162,25 @@
     crossorigin="anonymous"></script>
     <script src="home.js"></script>
     <script src="myfavfix.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            const searchInput = document.querySelector('.search-input');
+            const searchForm = document.querySelector('.search-form');
+            const hiddenSubmitButton = searchForm.querySelector('[type="submit"]');
+
+            searchInput.addEventListener('keypress', function (e) {
+                if (e.key === 'Enter') {
+                    e.preventDefault(); // 防止表單的默認提交
+                    hiddenSubmitButton.click(); // 手動觸發隱藏的提交按鈕
+                }
+            });
+
+            const searchBtn = document.querySelector('.search-btn');
+            searchBtn.addEventListener('click', () => {
+                searchForm.submit();
+            });
+        });
+    </script>
 </body>
 </html>
     
