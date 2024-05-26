@@ -11,7 +11,7 @@ if (!isset($_SESSION['user_id'])) {
 // 連接到資料庫
 $servername = "localhost";
 $username = "root";  
-$password = "";      
+$password = "nc@p12rs00a4";      
 $dbname = "user";
 
 $conn = new mysqli($servername, $username, $password, $dbname);

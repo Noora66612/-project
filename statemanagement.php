@@ -42,4 +42,3 @@ function insert(){
     mysqli_close($conn);
 }
 ?>
-

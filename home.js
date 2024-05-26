@@ -10,7 +10,6 @@ document.addEventListener("click", function(event) {
     var sidebar = document.getElementById("mySidebar");
     var menuIcon = document.getElementById("menu-icon");
 
-    // Check if the click is outside the sidebar and the menu icon
     if (!sidebar.contains(event.target) && !menuIcon.contains(event.target)) {
         sidebar.classList.remove("active");
     }
@@ -20,7 +19,6 @@ document.addEventListener("scroll", function(event) {
     var sidebar = document.getElementById("mySidebar");
     var menuIcon = document.getElementById("menu-icon");
 
-    // Check if the click is outside the sidebar and the menu icon
     if (!sidebar.contains(event.target) && !menuIcon.contains(event.target)) {
         sidebar.classList.remove("active");
     }

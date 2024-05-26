@@ -1,28 +1,19 @@
 <?php
-
 $servername = "localhost";
 $username = "root";
-$password = "";
-$dbname = "user";
+$password = "nc@p12rs00a4";
+$dbname1 = "user";
 
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($servername, $username, $password, $dbname1);
 
-$sql ="CREATE DATABASE IF NOT EXISTS $dbname";
+$sql ="CREATE DATABASE IF NOT EXISTS $dbname1";
 $conn->query($sql);  
-$conn->select_db($dbname);
 
-if ($conn->connect_error) {
-    die("連接失敗: " . mysqli_connect_error());
-}
+$conn->select_db($dbname1);
 
-$sql = "CREATE TABLE IF NOT EXISTS `member` (
-    `id` INT AUTO_INCREMENT PRIMARY KEY,
-    `gmail` VARCHAR(255) NOT NULL,
-    `passwordHash` VARCHAR(255) NOT NULL
-)";
-
-if ($conn->query($sql) !== TRUE) {
-    die("創建數據表失敗: " . $conn->error);
-
-}
-?>
+$sql = "CREATE TABLE IF NOT EXISTS member (
+    id int(11) AUTO_INCREMENT PRIMARY KEY,
+    gmail varchar(255) NOT NULL,
+    passwordHash varchar(255) NOT NULL
+  )";
+$conn->query($sql);  

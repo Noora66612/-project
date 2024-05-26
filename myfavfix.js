@@ -131,6 +131,7 @@ function renderFavorites(favorites) {
                 <div class="row-left">
                     <div class="phonenum">
                         <i class="ri-phone-line"></i>
+                        電話：
                     </div>
                 </div>
                 <div class="row-right">

@@ -87,7 +87,7 @@
             // 連接資料庫
             $servername = "localhost";
             $username = "root";
-            $password = "5253";
+            $password = "nc@p12rs00a4";
             $dbname = "餐廳";
 
             // 建立連線
