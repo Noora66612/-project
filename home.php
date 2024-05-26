@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
@@ -58,7 +61,7 @@
                         </form>
                 </form>            
             <a href=myfavfix.php><i class="ri-heart-line"></i></a>
-            <a href=user.html><i class="ri-user-line"></i></a>
+            <a href=user.php><i class="ri-user-line"></i></a>
             <div class="bx bx-menu" id="menu-icon"></div>
         </div>  
     </header>
